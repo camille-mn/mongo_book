@@ -335,6 +335,8 @@ Par exemple, on souhaite récuperer les notes d’un étudiant à l’aide de so
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">collec</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">({</span><span class="s2">&quot;cle&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">})</span>
 </pre></div>
 </div>
+<p>On crée ici un index dans la collection ‘collec’ de la base de données courante ‘db’. On donne ensuite le nom de la clé. Le “:1” signifie que l’index va trier les données dans l’ordre croissant.</p>
+<p><strong>A noter :</strong> Si on avait mis une valeur négative à la place du 1, les données auraient été triées dans l’ordre décroissant. Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p>
 </div>
 </div>
 
