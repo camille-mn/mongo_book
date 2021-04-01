@@ -374,8 +374,8 @@ syntaxique correspondant au langage <code class="docutils literal notranslate"><
 <p>On peut même imaginer mettre, en parallèle, la syntaxe MongoDB et son
 équivalent SQL :</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7a06714e-9124-4a06-8f28-d7f3f7b63533" name="b6fd77b5-5c99-46af-af72-f98997e3f164" type="radio">
-</input><label class="tabbed-label" for="7a06714e-9124-4a06-8f28-d7f3f7b63533">
+<input checked="checked" id="73d09da9-3b83-4dd5-bdc4-72cce1f7b5fd" name="ffccf108-f6d5-48ad-8e6c-8d5e58b4c268" type="radio">
+</input><label class="tabbed-label" for="73d09da9-3b83-4dd5-bdc4-72cce1f7b5fd">
 MongoDB</label><div class="tabbed-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">t</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">},</span>
@@ -384,8 +384,8 @@ MongoDB</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e16c441c-bf90-4f11-8976-b1e762af28d9" name="b6fd77b5-5c99-46af-af72-f98997e3f164" type="radio">
-</input><label class="tabbed-label" for="e16c441c-bf90-4f11-8976-b1e762af28d9">
+<input id="65e5a179-8d3c-473d-b2cc-08cefa5c46ba" name="ffccf108-f6d5-48ad-8e6c-8d5e58b4c268" type="radio">
+</input><label class="tabbed-label" for="65e5a179-8d3c-473d-b2cc-08cefa5c46ba">
 Équivalent SQL</label><div class="tabbed-content docutils">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">b</span>
 <span class="k">FROM</span> <span class="n">t</span>
@@ -477,7 +477,7 @@ MongoDB qui seront exécutées à la volée :</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da3188&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c63b37411b1c621865&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1236&quot;,
 		&quot;loc&quot; : {
@@ -513,7 +513,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40363289&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da31a1&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c63b37411b1c621878&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;277&quot;,
 		&quot;loc&quot; : {
@@ -559,7 +559,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40364296&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da3712&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621df0&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;2459&quot;,
 		&quot;loc&quot; : {
@@ -600,7 +600,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40510328&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da379c&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621e7a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;2102&quot;,
 		&quot;loc&quot; : {
@@ -641,7 +641,48 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40529203&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da384c&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621f2a&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;3511&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9100876,
+				40.8860444
+			]
+		},
+		&quot;street&quot; : &quot;Johnson Avenue&quot;,
+		&quot;zipcode&quot; : &quot;10463&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-07-02T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 5
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-11-06T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 8
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-03-29T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-06-20T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 27
+		}
+	],
+	&quot;name&quot; : &quot;Hunan Balcony&quot;,
+	&quot;restaurant_id&quot; : &quot;40551996&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621f2b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;732&quot;,
 		&quot;loc&quot; : {
@@ -687,48 +728,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40552226&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da384d&quot;),
-	&quot;address&quot; : {
-		&quot;building&quot; : &quot;3511&quot;,
-		&quot;loc&quot; : {
-			&quot;type&quot; : &quot;Point&quot;,
-			&quot;coordinates&quot; : [
-				-73.9100876,
-				40.8860444
-			]
-		},
-		&quot;street&quot; : &quot;Johnson Avenue&quot;,
-		&quot;zipcode&quot; : &quot;10463&quot;
-	},
-	&quot;borough&quot; : &quot;Bronx&quot;,
-	&quot;cuisine&quot; : &quot;Chinese&quot;,
-	&quot;grades&quot; : [
-		{
-			&quot;date&quot; : ISODate(&quot;2014-07-02T00:00:00Z&quot;),
-			&quot;grade&quot; : &quot;A&quot;,
-			&quot;score&quot; : 5
-		},
-		{
-			&quot;date&quot; : ISODate(&quot;2013-11-06T00:00:00Z&quot;),
-			&quot;grade&quot; : &quot;A&quot;,
-			&quot;score&quot; : 8
-		},
-		{
-			&quot;date&quot; : ISODate(&quot;2013-03-29T00:00:00Z&quot;),
-			&quot;grade&quot; : &quot;B&quot;,
-			&quot;score&quot; : 17
-		},
-		{
-			&quot;date&quot; : ISODate(&quot;2012-06-20T00:00:00Z&quot;),
-			&quot;grade&quot; : &quot;B&quot;,
-			&quot;score&quot; : 27
-		}
-	],
-	&quot;name&quot; : &quot;Hunan Balcony&quot;,
-	&quot;restaurant_id&quot; : &quot;40551996&quot;
-}
-{
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da38de&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621fbd&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;202&quot;,
 		&quot;loc&quot; : {
@@ -774,7 +774,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40571587&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da38ed&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c621fca&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1474&quot;,
 		&quot;loc&quot; : {
@@ -810,7 +810,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40573101&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da3ba9&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c622286&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1702&quot;,
 		&quot;loc&quot; : {
@@ -851,7 +851,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40701165&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6065c8a7a8ca14cc90da3d69&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6065c8c73b37411b1c622446&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1811&quot;,
 		&quot;loc&quot; : {
