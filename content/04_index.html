@@ -52,6 +52,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Les requêtes d’agrégation" href="05_agreg.html" />
@@ -463,6 +465,460 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 <ul class="simple">
 <li><p>Opérateurs bénéficiant de l’index</p></li>
 </ul>
+<p>Construire une requête mongoDB utilisant des index ne difèrent pas d’une requête n’en utilisant pas, toutefois, certains opérateurs logiques bénéficient tout particlulièrement de la présence d’un ou plusieurs index. Il est donc pertinent de construire des index si vous pensez utilisez ces opérateurs.</p>
+<p><em>Exemple 1 : Opérateur égal (:, $eq)</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;cuisine&quot;</span><span class="o">:</span> <span class="s2">&quot;Chinese&quot;</span><span class="p">,</span> <span class="s2">&quot;borough&quot;</span><span class="o">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3bdd&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1269&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.871194,
+				40.6730975
+			]
+		},
+		&quot;street&quot; : &quot;Sutter Avenue&quot;,
+		&quot;zipcode&quot; : &quot;11208&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-09-16T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 21
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-08-28T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-04-02T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;C&quot;,
+			&quot;score&quot; : 56
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-08-15T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 27
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-03-28T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 27
+		}
+	],
+	&quot;name&quot; : &quot;May May Kitchen&quot;,
+	&quot;restaurant_id&quot; : &quot;40358429&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3bff&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;976&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.92701509999999,
+				40.6620192
+			]
+		},
+		&quot;street&quot; : &quot;Rutland Road&quot;,
+		&quot;zipcode&quot; : &quot;11212&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-04-23T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-03-26T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-03-13T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 4
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-11-16T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		}
+	],
+	&quot;name&quot; : &quot;Golden Pavillion&quot;,
+	&quot;restaurant_id&quot; : &quot;40363920&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3e83&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;152&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.986446,
+				40.6915505
+			]
+		},
+		&quot;street&quot; : &quot;Lawrence Street&quot;,
+		&quot;zipcode&quot; : &quot;11201&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-27T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 5
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-04-22T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-08-22T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;C&quot;,
+			&quot;score&quot; : 52
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-12-27T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-12-23T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		}
+	],
+	&quot;name&quot; : &quot;Lee&#39;S Villa Chinese Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40388386&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3edc&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;463&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9667463,
+				40.6935651
+			]
+		},
+		&quot;street&quot; : &quot;Myrtle Avenue&quot;,
+		&quot;zipcode&quot; : &quot;11205&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-02T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 2
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-10-08T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-09-24T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		}
+	],
+	&quot;name&quot; : &quot;Kum Kau Kitchen&quot;,
+	&quot;restaurant_id&quot; : &quot;40390653&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3ef2&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;152&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9771312,
+				40.67257840000001
+			]
+		},
+		&quot;street&quot; : &quot;7 Avenue&quot;,
+		&quot;zipcode&quot; : &quot;11215&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-01T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-03-11T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-02-06T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-01-26T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		}
+	],
+	&quot;name&quot; : &quot;Szechuan Delight Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40391528&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb3f29&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;404&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.97635439999999,
+				40.6438997
+			]
+		},
+		&quot;street&quot; : &quot;Church Avenue&quot;,
+		&quot;zipcode&quot; : &quot;11218&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-29T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-03-24T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-10-25T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;C&quot;,
+			&quot;score&quot; : 3
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-10-01T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-05-09T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;C&quot;,
+			&quot;score&quot; : 2
+		}
+	],
+	&quot;name&quot; : &quot;Yen Yen Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40393181&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb4026&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;5100&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				80.361767,
+				26.4669033
+			]
+		},
+		&quot;street&quot; : &quot;Kings Plaza Shopping Ct&quot;,
+		&quot;zipcode&quot; : &quot;11234&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-04-09T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-04-04T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-10-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-05-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-10-20T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 22
+		}
+	],
+	&quot;name&quot; : &quot;Master Wok&quot;,
+	&quot;restaurant_id&quot; : &quot;40398688&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb4030&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;425&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.96837599999999,
+				40.59775399999999
+			]
+		},
+		&quot;street&quot; : &quot;Avenue U&quot;,
+		&quot;zipcode&quot; : &quot;11223&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-09T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-10-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-10-01T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 8
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-10-25T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		}
+	],
+	&quot;name&quot; : &quot;Choy Le Chinese Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40398904&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb4244&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1955&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9988983,
+				40.6052988
+			]
+		},
+		&quot;street&quot; : &quot;86 Street&quot;,
+		&quot;zipcode&quot; : &quot;11214&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-10-31T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-09-17T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-04-30T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-09-05T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 27
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-02-07T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 20
+		}
+	],
+	&quot;name&quot; : &quot;New Ruan&#39;S Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40537963&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065f6be7d5afafbc1bb4366&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;6820&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-74.0122391,
+				40.6289332
+			]
+		},
+		&quot;street&quot; : &quot;Fort Hamilton Parkway&quot;,
+		&quot;zipcode&quot; : &quot;11219&quot;
+	},
+	&quot;borough&quot; : &quot;Brooklyn&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-11-19T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 4
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-12-09T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-12-05T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-05-22T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		}
+	],
+	&quot;name&quot; : &quot;Great Wall Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40574067&quot;
+}
+Type &quot;it&quot; for more
+</pre></div>
+</div>
+</div>
+</div>
+<p>On récupère les restaurants proposant de la cuisine chinoise dans le quartier de Brooklyn.</p>
+<p><em>Exemple 2 : Opérateur infériorité/supériorité (<span class="math notranslate nohighlight">\(lt, \)</span>lte, <span class="math notranslate nohighlight">\(gt, \)</span>gte)</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">20</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">$gte</span><span class="o">:</span> <span class="s2">&quot;user100000&quot;</span><span class="p">,</span> <span class="nx">$lte</span><span class="o">:</span><span class="s2">&quot;user100000&quot;</span><span class="p">}})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On récupère les utilisateurs de 20 ans et dont l’id est compris entre 10 000 et 100 000.</p>
 </div>
 <div class="section" id="index-composes">
 <h2><span class="section-number">4.4. </span>Index composés<a class="headerlink" href="#index-composes" title="Permalink to this headline">¶</a></h2>
