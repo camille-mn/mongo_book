@@ -374,8 +374,8 @@ syntaxique correspondant au langage <code class="docutils literal notranslate"><
 <p>On peut même imaginer mettre, en parallèle, la syntaxe MongoDB et son
 équivalent SQL :</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a1288963-d23d-488a-854d-f7020e59943f" name="1e09abfd-19b9-4713-8cfb-e578eecfbae5" type="radio">
-</input><label class="tabbed-label" for="a1288963-d23d-488a-854d-f7020e59943f">
+<input checked="checked" id="06460f5d-725b-45f0-b63c-1e52a9ef6815" name="db452aca-5cc2-4ba1-9d0c-efb89891be4b" type="radio">
+</input><label class="tabbed-label" for="06460f5d-725b-45f0-b63c-1e52a9ef6815">
 MongoDB</label><div class="tabbed-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">t</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">},</span>
@@ -384,8 +384,8 @@ MongoDB</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="c7f7879b-cda8-4294-8d40-4197db204430" name="1e09abfd-19b9-4713-8cfb-e578eecfbae5" type="radio">
-</input><label class="tabbed-label" for="c7f7879b-cda8-4294-8d40-4197db204430">
+<input id="ab702e4b-3078-44e7-8e8e-d7c6c0a96278" name="db452aca-5cc2-4ba1-9d0c-efb89891be4b" type="radio">
+</input><label class="tabbed-label" for="ab702e4b-3078-44e7-8e8e-d7c6c0a96278">
 Équivalent SQL</label><div class="tabbed-content docutils">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">b</span>
 <span class="k">FROM</span> <span class="n">t</span>
@@ -472,6 +472,431 @@ MongoDB qui seront exécutées à la volée :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;cuisine&quot;</span><span class="o">:</span> <span class="s2">&quot;Chinese&quot;</span><span class="p">,</span> <span class="s2">&quot;borough&quot;</span><span class="o">:</span> <span class="s2">&quot;Bronx&quot;</span><span class="p">}</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d0e20&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1236&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.8893654,
+				40.81376179999999
+			]
+		},
+		&quot;street&quot; : &quot;238 Spofford Ave&quot;,
+		&quot;zipcode&quot; : &quot;10474&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2013-12-30T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 8
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-01-08T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-06-12T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 15
+		}
+	],
+	&quot;name&quot; : &quot;Happy Garden&quot;,
+	&quot;restaurant_id&quot; : &quot;40363289&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d0e32&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;277&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.8941893,
+				40.8634684
+			]
+		},
+		&quot;street&quot; : &quot;East Kingsbridge Road&quot;,
+		&quot;zipcode&quot; : &quot;10458&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-03-03T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-09-26T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-03-19T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-08-29T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-08-17T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		}
+	],
+	&quot;name&quot; : &quot;Happy Garden&quot;,
+	&quot;restaurant_id&quot; : &quot;40364296&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d13ac&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;2459&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.8929629,
+				40.8601605
+			]
+		},
+		&quot;street&quot; : &quot;Webster Avenue&quot;,
+		&quot;zipcode&quot; : &quot;10458&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-12-23T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-01-07T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 8
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-12-28T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-07-18T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 13
+		}
+	],
+	&quot;name&quot; : &quot;China Wok Ii&quot;,
+	&quot;restaurant_id&quot; : &quot;40510328&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d1436&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;2102&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.82609699999999,
+				40.8687177
+			]
+		},
+		&quot;street&quot; : &quot;Bartow Ave&quot;,
+		&quot;zipcode&quot; : &quot;10475&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-08-04T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-02-21T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 4
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-05-30T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-04-13T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		}
+	],
+	&quot;name&quot; : &quot;Dragon City&quot;,
+	&quot;restaurant_id&quot; : &quot;40529203&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d14e5&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;3511&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9100876,
+				40.8860444
+			]
+		},
+		&quot;street&quot; : &quot;Johnson Avenue&quot;,
+		&quot;zipcode&quot; : &quot;10463&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-07-02T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 5
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-11-06T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 8
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-03-29T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-06-20T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 27
+		}
+	],
+	&quot;name&quot; : &quot;Hunan Balcony&quot;,
+	&quot;restaurant_id&quot; : &quot;40551996&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d14e7&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;732&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.883128,
+				40.85353
+			]
+		},
+		&quot;street&quot; : &quot;East  187 Street&quot;,
+		&quot;zipcode&quot; : &quot;10458&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-11-07T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-05-15T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-11-18T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-06-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-09-17T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 19
+		}
+	],
+	&quot;name&quot; : &quot;Great Wall Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40552226&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d1578&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;202&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9164504,
+				40.8341845
+			]
+		},
+		&quot;street&quot; : &quot;East  167 Street&quot;,
+		&quot;zipcode&quot; : &quot;10456&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-12-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-12-12T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-12-20T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-08-01T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 7
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-03-13T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		}
+	],
+	&quot;name&quot; : &quot;Lucky House Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40571587&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d1587&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1474&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.88122729999999,
+				40.8281391
+			]
+		},
+		&quot;street&quot; : &quot;Westchester Avenue&quot;,
+		&quot;zipcode&quot; : &quot;10472&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-12-24T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2014-01-13T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 10
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-01-08T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		}
+	],
+	&quot;name&quot; : &quot;New Wah Kitchen&quot;,
+	&quot;restaurant_id&quot; : &quot;40573101&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d1842&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1702&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.9137269,
+				40.8482958
+			]
+		},
+		&quot;street&quot; : &quot;Grand Avenue&quot;,
+		&quot;zipcode&quot; : &quot;10453&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-04-16T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-04-10T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 11
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-03-14T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 5
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-09-22T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;B&quot;,
+			&quot;score&quot; : 17
+		}
+	],
+	&quot;name&quot; : &quot;New Hing Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40701165&quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6065e2be9c5ef00bbf2d1a02&quot;),
+	&quot;address&quot; : {
+		&quot;building&quot; : &quot;1811&quot;,
+		&quot;loc&quot; : {
+			&quot;type&quot; : &quot;Point&quot;,
+			&quot;coordinates&quot; : [
+				-73.8518311,
+				40.8504655
+			]
+		},
+		&quot;street&quot; : &quot;Williamsbridge Road&quot;,
+		&quot;zipcode&quot; : &quot;10461&quot;
+	},
+	&quot;borough&quot; : &quot;Bronx&quot;,
+	&quot;cuisine&quot; : &quot;Chinese&quot;,
+	&quot;grades&quot; : [
+		{
+			&quot;date&quot; : ISODate(&quot;2014-03-26T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2013-03-05T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 12
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-09-12T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2012-04-17T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 9
+		},
+		{
+			&quot;date&quot; : ISODate(&quot;2011-11-03T00:00:00Z&quot;),
+			&quot;grade&quot; : &quot;A&quot;,
+			&quot;score&quot; : 4
+		}
+	],
+	&quot;name&quot; : &quot;Hong Kong Restaurant&quot;,
+	&quot;restaurant_id&quot; : &quot;40765358&quot;
+}
+Type &quot;it&quot; for more
 </pre></div>
 </div>
 </div>
