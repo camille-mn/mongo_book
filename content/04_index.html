@@ -345,10 +345,10 @@
 <p>On met en place des index à chaque fois qu’on s’attend à avoir beaucoup de requêtes sur une clé (resp. un ensemble de clés).
 Par exemple, on souhaite récupérer les notes d’un étudiant à l’aide de son numéro étudiant. Il faudra alors mettre un index sur la clé “numéro étudiant” afin des réaliser des requetes efficaces pour retrouver toutes les informations de l’étudiant en fonction de son numéro.</p>
 <div class="tip admonition">
-<p class="admonition-title">Attention</p>
-<p>On ne peut pas toujours utiliser des index. En effet, les index rendent la mise à jour de la base fastidieuse : à chaque fois que
-vous rajoutez de nouvelles données, vous devez redéfinir vos index. Il n’est donc pas judicieux d’utiliser des index sur une base
-où vous vous attendez à devoir faire des mises à jour régulières.</p>
+<p class="admonition-title">⚠️ Attention</p>
+<p>On ne peut pas toujours utiliser des index. En effet, les index rendent la mise à jour de la base fastidieuse : à chaque fois que vous
+rajoutez de nouvelles données, vous devez redéfinir vos index. Il n’est donc pas judicieux d’utiliser des index sur une base où vous vous
+attendez à devoir faire des mises à jour régulières.</p>
 </div>
 </div>
 <div class="section" id="syntaxe-adaptee">
@@ -360,11 +360,6 @@ où vous vous attendez à devoir faire des mises à jour régulières.</p>
 </pre></div>
 </div>
 <p>On crée ici un index dans la collection ‘collec’ de la base de données courante ‘db’. On donne ensuite le nom du champs sur lequel on va ensuite créer la clé. Le “:1” signifie que l’index va trier les données dans l’ordre croissant.</p>
-<div class="admonition-a-noter admonition">
-<p class="admonition-title">À noter</p>
-<p>Si on avait mis une valeur négative à la place du 1, les données auraient été triées dans l’ordre décroissant.
-Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p>
-</div>
 <p><em>Exemple :</em></p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -395,6 +390,11 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 </div>
 </div>
+<div class="admonition-a-noter admonition">
+<p class="admonition-title">✍ À noter</p>
+<p>Si on avait mis une valeur négative à la place du 1, les données auraient été triées dans l’ordre décroissant.
+Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p>
+</div>
 <ul class="simple">
 <li><p>Opérateurs bénéficiant de l’index</p></li>
 </ul>
@@ -404,17 +404,10 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="section" id="index-textuels">
 <h2><span class="section-number">4.5. </span>Index textuels<a class="headerlink" href="#index-textuels" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Création d’un index</p></li>
-<li><p>Requêtes avancées</p></li>
-</ul>
 </div>
 <div class="section" id="index-geo-spatiaux">
 <h2><span class="section-number">4.6. </span>Index géo-spatiaux<a class="headerlink" href="#index-geo-spatiaux" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Création d’un index</p></li>
-<li><p>Requêtes avancées</p></li>
-</ul>
+<p>test nouveau test</p>
 </div>
 </div>
 
