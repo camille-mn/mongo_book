@@ -373,7 +373,7 @@ attendez à devoir faire des mises à jour régulières.</p>
 </div>
 </div>
 </div>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">({</span><span class="s2">&quot;borough&quot;</span> <span class="o">:</span> <span class="mf">1</span><span class="p">})</span>
 </pre></div>
@@ -399,7 +399,67 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 <ul class="simple">
 <li><p>Récupération d’index</p></li>
 </ul>
-<p>parler de getIndexes + exemple</p>
+<p>Lorsque l’on prend en main une nouvelle base mongoDB, il est judicieux de se renseigner sur les index déja crés, afin de construire les requêtes les plus optimisées possible. Pour cela, on utilise getIndexes :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">collec</span><span class="p">.</span><span class="nx">getIndexes</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>La syntaxe est très simple et limpide, et donc si l’on applique cette dernière à notre exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">getIndexes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+	{
+		&quot;v&quot; : 2,
+		&quot;key&quot; : {
+			&quot;_id&quot; : 1
+		},
+		&quot;name&quot; : &quot;_id_&quot;
+	},
+	{
+		&quot;v&quot; : 2,
+		&quot;key&quot; : {
+			&quot;address.loc&quot; : &quot;2dsphere&quot;
+		},
+		&quot;name&quot; : &quot;address.loc_2dsphere&quot;,
+		&quot;2dsphereIndexVersion&quot; : 3
+	},
+	{
+		&quot;v&quot; : 2,
+		&quot;key&quot; : {
+			&quot;_fts&quot; : &quot;text&quot;,
+			&quot;_ftsx&quot; : 1
+		},
+		&quot;name&quot; : &quot;$**_text&quot;,
+		&quot;weights&quot; : {
+			&quot;$**&quot; : 1
+		},
+		&quot;default_language&quot; : &quot;english&quot;,
+		&quot;language_override&quot; : &quot;language&quot;,
+		&quot;textIndexVersion&quot; : 3
+	},
+	{
+		&quot;v&quot; : 2,
+		&quot;key&quot; : {
+			&quot;borough&quot; : 1
+		},
+		&quot;name&quot; : &quot;borough_1&quot;
+	},
+	{
+		&quot;v&quot; : 2,
+		&quot;key&quot; : {
+			&quot;cuisine&quot; : 1
+		},
+		&quot;name&quot; : &quot;cuisine_1&quot;
+	}
+]
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Opérateurs bénéficiant de l’index</p></li>
 </ul>
