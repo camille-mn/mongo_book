@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>4. Les index &#8212; MongoDB : notes de cours</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -92,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Chapitres
  </span>
@@ -158,7 +159,7 @@
   </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Annexes
  </span>
@@ -307,8 +308,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#index-textuels">
-   4.5. Index textuels
+  <a class="reference internal nav-link" href="#requetes-et-index-textuels">
+   4.5. Requêtes et Index textuels
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -328,7 +329,7 @@
         
               <div>
                 
-  <div class="section" id="les-index">
+  <section id="les-index">
 <h1><span class="section-number">4. </span>Les index<a class="headerlink" href="#les-index" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Auteurs/trices : Adrien VIGUE, Etienne BARON, Camille MONOT</p></li>
@@ -337,12 +338,12 @@
 <ul class="simple">
 <li><p>Index + requêtes textuelles + requêtes géographiques</p></li>
 </ul>
-<div class="section" id="a-quoi-servent-ils">
+<section id="a-quoi-servent-ils">
 <h2><span class="section-number">4.1. </span>À quoi servent-ils ?<a class="headerlink" href="#a-quoi-servent-ils" title="Permalink to this headline">¶</a></h2>
 <p>Les index prennent en charge l’exécution efficace des requêtes dans MongoDB. Sans index, MongoDB doit effectuer une analyse de collection , c’est-à-dire analyser chaque document d’une collection, pour sélectionner les documents qui correspondent à l’instruction de requête. Si un index approprié existe pour une requête, MongoDB peut utiliser l’index pour limiter le nombre de documents qu’il doit inspecter. Les index de MongoDB sont similaires aux index d’autres systèmes de base de données. MongoDB définit les index au niveau de la collection et prend en charge les index sur n’importe quel champ ou sous-champ des documents dans une collection MongoDB.</p>
 <p>En bref, les index sont un moyen de trouver rapidement et efficacement du contenu dans une base de données.</p>
-</div>
-<div class="section" id="quand-les-utiliser">
+</section>
+<section id="quand-les-utiliser">
 <h2><span class="section-number">4.2. </span>Quand les utiliser ?<a class="headerlink" href="#quand-les-utiliser" title="Permalink to this headline">¶</a></h2>
 <p>On met en place des index à chaque fois qu’on s’attend à avoir beaucoup de requêtes sur une clé (resp. un ensemble de clés).
 Par exemple, on souhaite récupérer les notes d’un étudiant à l’aide de son numéro étudiant. Il faudra alors mettre un index sur la clé “numéro étudiant” afin des réaliser des requetes efficaces pour retrouver toutes les informations de l’étudiant en fonction de son numéro.</p>
@@ -352,8 +353,8 @@ Par exemple, on souhaite récupérer les notes d’un étudiant à l’aide de s
 rajoutez de nouvelles données, vous devez redéfinir vos index. Il n’est donc pas judicieux d’utiliser des index sur une base où vous vous
 attendez à devoir faire des mises à jour régulières.</p>
 </div>
-</div>
-<div class="section" id="syntaxe-adaptee">
+</section>
+<section id="syntaxe-adaptee">
 <h2><span class="section-number">4.3. </span>Syntaxe adaptée<a class="headerlink" href="#syntaxe-adaptee" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Création d’un index</p></li>
@@ -475,7 +476,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4044&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1410&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -521,7 +522,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4066&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1433&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -562,7 +563,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d42ea&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e16b8&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -608,7 +609,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4331&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e16fd&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -644,7 +645,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4357&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1725&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -685,7 +686,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d438f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e175c&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -731,7 +732,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d448e&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1859&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -777,7 +778,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4497&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1863&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -818,7 +819,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d46ab&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1a77&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -864,7 +865,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d47cd&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1b9a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -919,18 +920,50 @@ Type &quot;it&quot; for more
 </div>
 </div>
 <p>On récupère les utilisateurs de 20 ans et dont l’id est compris entre 10 000 et 100 000.</p>
-</div>
-<div class="section" id="index-composes">
+</section>
+<section id="index-composes">
 <h2><span class="section-number">4.4. </span>Index composés<a class="headerlink" href="#index-composes" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="index-textuels">
-<h2><span class="section-number">4.5. </span>Index textuels<a class="headerlink" href="#index-textuels" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="requetes-et-index-textuels">
+<h2><span class="section-number">4.5. </span>Requêtes et Index textuels<a class="headerlink" href="#requetes-et-index-textuels" title="Permalink to this headline">¶</a></h2>
+<p>Lorsque l’on veut interroger notre base de données sur un champ de type “chaîne de caractères”, deux méthodes s’offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur le champ. L’avantage de la première méthode est une très grande précision, et on l’utilisera donc lorsque l’on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l’index pour effectuer une recherche de type “moteur de recherche”, renvoyant des résultats proches de ce qui a été demandé.</p>
 <ul class="simple">
-<li><p>Création d’un index</p></li>
-<li><p>Requêtes avancées</p></li>
+<li><p>Requêtes textuelles sans index</p></li>
 </ul>
+<p>La forme la plus basique d’une requête textuelle est la suivante :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">nomDeLaCollection</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;cle&quot;</span><span class="o">:</span> <span class="sr">/exemple/</span><span class="p">})</span>
+</pre></div>
 </div>
-<div class="section" id="index-geo-spatiaux">
+<p>Ici, “cle” désigne le champ dans lequel on souhaite rechercher et “exemple” la sous-chaîne que l’on recherche. Les // entourant la sous-chaîne sont en réalité une contrainte permettant d’affiner le résultat. Parmi les contraintes disponibles sur les requêtes textuelles, on peut citer :</p>
+<p>-&gt; /exemple/ : on ne renvoie que les chaînes contenant la sous-chaîne “exemple”.</p>
+<p>-&gt; /exemple/i : pareil, mais sans se soucier dans la casse (majuscules/miniscules).</p>
+<p>-&gt; /^exemple/ : que les sous-chaînes commençant par exemple.</p>
+<p>-&gt; /exemple$/ : que les sous-chaînes finissant par exemple.</p>
+<p>-&gt; /ex.mple/ : que les sous-chaînes contenant “ex”, suivi d’un caractère quelconque (“.” == “e” dans notre exemple), suivit de “mple”.</p>
+<p>-&gt; /ex.<em>le/ : que les sous-chaînes contenant “ex”, suivi d’une série de caractères quelconque (“.</em>” == “emp” dans notre exemple), suivit de “le”.</p>
+<p>Une liste de toutes les contraintes existantes est disponible ici : <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended">https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended</a></p>
+<p>_Exemple 1 : Liste des discours pour lesquels l’orateur a un prénom qui commence par la lettre J :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">discours</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="sr">/^J/i</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>_Exemple 2 : Liste des discours pour lesquels l’orateur a un prénom composé. :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">discours</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="sr">/-.* /</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Création d’un index textuel</p></li>
+<li><p>Requêtes avancées utilisant un index textuel</p></li>
+</ul>
+</section>
+<section id="index-geo-spatiaux">
 <h2><span class="section-number">4.6. </span>Index géo-spatiaux<a class="headerlink" href="#index-geo-spatiaux" title="Permalink to this headline">¶</a></h2>
 <p>Avec des données géo-spatiales (longitude, latitude), il est possible de créer un index géo-spatial.
 En plus d’une meilleure efficacité, cet index va permettre de trouver des éléments proches d’un point donné ou bien trouver des éléments inclus dans un polygone.</p>
@@ -995,8 +1028,8 @@ Pour avoir un polygone fermé, il faudra veiller à ce que les dernières coordo
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

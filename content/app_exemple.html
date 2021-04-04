@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>Annexe A : Exemple de fichier source &#8212; MongoDB : notes de cours</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -92,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Chapitres
  </span>
@@ -158,7 +159,7 @@
   </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p>
  <span class="caption-text">
   Annexes
  </span>
@@ -330,7 +331,7 @@
         
               <div>
                 
-  <div class="section" id="annexe-a-exemple-de-fichier-source">
+  <section id="annexe-a-exemple-de-fichier-source">
 <span id="sec-exemple"></span><h1>Annexe A : Exemple de fichier source<a class="headerlink" href="#annexe-a-exemple-de-fichier-source" title="Permalink to this headline">¶</a></h1>
 <p>N’hésitez pas à vous inspirer de ce fichier pour vos propres réalisations
 (vous pouvez télécharger le code source correspondant à l’aide du bouton dédié
@@ -338,22 +339,22 @@ en haut à droite de cette page).</p>
 <p>Pour commencer, quelques exemples de syntaxe markdown (plus de détails
 <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">là</a>,
 par exemple) :</p>
-<div class="section" id="ceci-est-un-titre-de-niveau-2">
+<section id="ceci-est-un-titre-de-niveau-2">
 <h2>Ceci est un titre de niveau 2<a class="headerlink" href="#ceci-est-un-titre-de-niveau-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ceci-est-un-titre-de-niveau-3">
+<section id="ceci-est-un-titre-de-niveau-3">
 <h3>Ceci est un titre de niveau 3<a class="headerlink" href="#ceci-est-un-titre-de-niveau-3" title="Permalink to this headline">¶</a></h3>
 <p>Ce texte est <strong>en gras</strong>, voire <em>en italique</em>.</p>
-</div>
-</div>
-<div class="section" id="un-peu-de-maths">
+</section>
+</section>
+<section id="un-peu-de-maths">
 <h2>Un peu de maths<a class="headerlink" href="#un-peu-de-maths" title="Permalink to this headline">¶</a></h2>
 <p>Vous pouvez utiliser des formules mathématiques <span class="math notranslate nohighlight">\(y = f(x)\)</span>, voire même :</p>
 <div class="math notranslate nohighlight">
 \[
     y = f(x)
 \]</div>
-</div>
-<div class="section" id="un-peu-de-code">
+</section>
+<section id="un-peu-de-code">
 <h2>Un peu de code<a class="headerlink" href="#un-peu-de-code" title="Permalink to this headline">¶</a></h2>
 <p>De la même manière, vous pouvez avoir des morceaux de code <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f(x)</span></code> au milieu
 de votre texte, ou bien :</p>
@@ -374,8 +375,8 @@ syntaxique correspondant au langage <code class="docutils literal notranslate"><
 <p>On peut même imaginer mettre, en parallèle, la syntaxe MongoDB et son
 équivalent SQL :</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="86dc2996-e61c-49db-8d45-5426e7f0f185" name="4fa5f147-dc26-486f-a67c-b1909f067fb9" type="radio">
-</input><label class="tabbed-label" for="86dc2996-e61c-49db-8d45-5426e7f0f185">
+<input checked="checked" id="1bdaccd3-69b2-47a5-ade4-b412a69e5b39" name="456d1f89-7d95-4347-aac0-ba4c58bebbe0" type="radio">
+</input><label class="tabbed-label" for="1bdaccd3-69b2-47a5-ade4-b412a69e5b39">
 MongoDB</label><div class="tabbed-content docutils">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">t</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">},</span>
@@ -384,8 +385,8 @@ MongoDB</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="5f9e4a05-2a19-4df3-a041-f25e25ee10eb" name="4fa5f147-dc26-486f-a67c-b1909f067fb9" type="radio">
-</input><label class="tabbed-label" for="5f9e4a05-2a19-4df3-a041-f25e25ee10eb">
+<input id="5d654e3c-d917-40c1-b6cc-ca41555bf1e7" name="456d1f89-7d95-4347-aac0-ba4c58bebbe0" type="radio">
+</input><label class="tabbed-label" for="5d654e3c-d917-40c1-b6cc-ca41555bf1e7">
 Équivalent SQL</label><div class="tabbed-content docutils">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">b</span>
 <span class="k">FROM</span> <span class="n">t</span>
@@ -432,8 +433,8 @@ MongoDB</label><div class="tabbed-content docutils">
 on ne peut pas
 insérer de code <strong>exécutable</strong> dans ces contenus
 (voir <a class="reference internal" href="#sec-exec"><span class="std std-ref">plus bas</span></a>).</p>
-</div>
-<div class="section" id="mise-en-valeur">
+</section>
+<section id="mise-en-valeur">
 <h2>Mise en valeur<a class="headerlink" href="#mise-en-valeur" title="Permalink to this headline">¶</a></h2>
 <p>Vous pouvez également mettre en avant certains paragraphes :</p>
 <div class="admonition-titre admonition">
@@ -444,14 +445,14 @@ insérer de code <strong>exécutable</strong> dans ces contenus
 <p class="admonition-title">Titre</p>
 <p>Contenu</p>
 </div>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Vous pouvez même écrire dans les marges !</p>
-</div>
+</aside>
 <p>Au passage, tous les caractères UTF-8 sont valides ⚠️🤣 (ce qui ne veut pas dire
 que vous devez à tout prix en abuser :)</p>
-</div>
-<div class="section" id="et-maintenant-la-magie">
+</section>
+<section id="et-maintenant-la-magie">
 <span id="sec-exec"></span><h2>Et maintenant, la magie !<a class="headerlink" href="#et-maintenant-la-magie" title="Permalink to this headline">¶</a></h2>
 <p>Mais le plus intéressant dans tout cela, c’est d’avoir des cellules de code
 MongoDB qui seront exécutées à la volée :</p>
@@ -477,7 +478,7 @@ MongoDB qui seront exécutées à la volée :</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d405a&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1427&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1236&quot;,
 		&quot;loc&quot; : {
@@ -513,7 +514,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40363289&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d406d&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e143b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;277&quot;,
 		&quot;loc&quot; : {
@@ -559,7 +560,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40364296&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d45e4&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e19b2&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;2459&quot;,
 		&quot;loc&quot; : {
@@ -600,7 +601,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40510328&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4670&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1a3d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;2102&quot;,
 		&quot;loc&quot; : {
@@ -641,7 +642,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40529203&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d471f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1aec&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;3511&quot;,
 		&quot;loc&quot; : {
@@ -682,7 +683,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40551996&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4720&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1aed&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;732&quot;,
 		&quot;loc&quot; : {
@@ -728,7 +729,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40552226&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d47b2&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1b7e&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;202&quot;,
 		&quot;loc&quot; : {
@@ -774,7 +775,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40571587&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d47bf&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1b8d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1474&quot;,
 		&quot;loc&quot; : {
@@ -810,7 +811,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40573101&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4a7b&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e62ae394d4586e1e49&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1702&quot;,
 		&quot;loc&quot; : {
@@ -851,7 +852,7 @@ MongoDB qui seront exécutées à la volée :</p>
 	&quot;restaurant_id&quot; : &quot;40701165&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;6067bfa028c0d9d7c01d4c3c&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a10e72ae394d4586e200a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1811&quot;,
 		&quot;loc&quot; : {
@@ -903,8 +904,8 @@ Type &quot;it&quot; for more
 </div>
 <p>Ici, le résultat affiché est celui obtenu lorsque l’on exécute ces deux lignes
 dans un client MongoDB.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
