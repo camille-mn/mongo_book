@@ -57,7 +57,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Les requêtes d’agrégation" href="05_agreg.html" />
+    <link rel="next" title="6. Les requêtes d’agrégation" href="05_agreg.html" />
     <link rel="prev" title="3. Attributs de type date" href="03_dates.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,23 +120,28 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="#test">
+   5. test
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="05_agreg.html">
-   5. Les requêtes d’agrégation
+   6. Les requêtes d’agrégation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_modif.html">
-   6. Les requêtes de modification
+   7. Les requêtes de modification
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="07_scripts.html">
-   7. Effectuer des requêtes depuis des programmes Python ou R
+   8. Effectuer des requêtes depuis des programmes Python ou R
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="07_scripts_py.html">
-     7.1. Requêtes depuis Python :
+     8.1. Requêtes depuis Python :
      <code class="docutils literal notranslate">
       <span class="pre">
        pymongo
@@ -146,7 +151,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07_scripts_R.html">
-     7.2. Requêtes depuis R :
+     8.2. Requêtes depuis R :
      <code class="docutils literal notranslate">
       <span class="pre">
        mongolite
@@ -287,35 +292,49 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quoi-servent-ils">
-   4.1. À quoi servent-ils ?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   4. Les index
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-quoi-servent-ils">
+     4.1. À quoi servent-ils ?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quand-les-utiliser">
+     4.2. Quand les utiliser ?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntaxe-adaptee">
+     4.3. Syntaxe adaptée
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index-composes">
+     4.4. Index composés
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requetes-et-index-textuels">
+     4.5. Requêtes et Index textuels
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quand-les-utiliser">
-   4.2. Quand les utiliser ?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test">
+   5. test
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syntaxe-adaptee">
-   4.3. Syntaxe adaptée
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#index-composes">
-   4.4. Index composés
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#requetes-et-index-textuels">
-   4.5. Requêtes et Index textuels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#index-geo-spatiaux">
-   4.6. Index géo-spatiaux
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index-geo-spatiaux">
+     5.1. Index géo-spatiaux
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -476,7 +495,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b78189c&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439bde29&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -522,7 +541,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b7818c0&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439bde4c&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -563,7 +582,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b781b43&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be0d0&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -609,7 +628,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b781b89&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be115&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -645,7 +664,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b781bb0&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be13d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -686,7 +705,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ab2eac94a29b781be7&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be174&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -732,7 +751,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ac2eac94a29b781ce5&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be271&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -778,7 +797,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ac2eac94a29b781cef&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be27b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -819,7 +838,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ac2eac94a29b781f03&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be490&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -865,7 +884,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606a13ac2eac94a29b782025&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606a13c9a7b522ad439be5b3&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -942,7 +961,10 @@ Type &quot;it&quot; for more
 <p>-&gt; /ex.mple/ : que les sous-chaînes contenant “ex”, suivi d’un caractère quelconque (“.” == “e” dans notre exemple), suivit de “mple”.</p>
 <p>-&gt; /ex.*le/ : que les sous-chaînes contenant “ex”, suivi d’une série de caractères quelconque (“.*” == “emp” dans notre exemple), suivit de “le”.</p>
 <p>Une liste de toutes les contraintes existantes est disponible ici : <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended">https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended</a>.</p>
-<p>test</p>
+</section>
+</section>
+<section id="test">
+<h1><span class="section-number">5. </span>test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h1>
 <p>_Exemple 1 : Liste des discours pour lesquels l’orateur a un prénom qui commence par la lettre J :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,9 +985,8 @@ Type &quot;it&quot; for more
 <li><p>Création d’un index textuel</p></li>
 <li><p>Requêtes avancées utilisant un index textuel</p></li>
 </ul>
-</section>
 <section id="index-geo-spatiaux">
-<h2><span class="section-number">4.6. </span>Index géo-spatiaux<a class="headerlink" href="#index-geo-spatiaux" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Index géo-spatiaux<a class="headerlink" href="#index-geo-spatiaux" title="Permalink to this headline">¶</a></h2>
 <p>Avec des données géo-spatiales (longitude, latitude), il est possible de créer un index géo-spatial.
 En plus d’une meilleure efficacité, cet index va permettre de trouver des éléments proches d’un point donné ou bien trouver des éléments inclus dans un polygone.</p>
 <ul class="simple">
@@ -1058,7 +1079,7 @@ Pour avoir un polygone fermé, il faudra veiller à ce que les dernières coordo
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="03_dates.html" title="previous page"><span class="section-number">3. </span>Attributs de type date</a>
-    <a class='right-next' id="next-link" href="05_agreg.html" title="next page"><span class="section-number">5. </span>Les requêtes d’agrégation</a>
+    <a class='right-next' id="next-link" href="05_agreg.html" title="next page"><span class="section-number">6. </span>Les requêtes d’agrégation</a>
 
         </div>
         
