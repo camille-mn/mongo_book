@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Annexe B : Utilisation de git &#8212; MongoDB : notes de cours</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -90,7 +89,7 @@
   </a>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Chapitres
  </span>
@@ -117,28 +116,23 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_index.html#test">
-   5. test
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="05_agreg.html">
-   6. Les requêtes d’agrégation
+   5. Les requêtes d’agrégation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_modif.html">
-   7. Les requêtes de modification
+   6. Les requêtes de modification
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="07_scripts.html">
-   8. Effectuer des requêtes depuis des programmes Python ou R
+   7. Effectuer des requêtes depuis des programmes Python ou R
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="07_scripts_py.html">
-     8.1. Requêtes depuis Python :
+     7.1. Requêtes depuis Python :
      <code class="docutils literal notranslate">
       <span class="pre">
        pymongo
@@ -148,7 +142,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07_scripts_R.html">
-     8.2. Requêtes depuis R :
+     7.2. Requêtes depuis R :
      <code class="docutils literal notranslate">
       <span class="pre">
        mongolite
@@ -161,7 +155,7 @@
   </i>
  </li>
 </ul>
-<p>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Annexes
  </span>
@@ -325,13 +319,13 @@
         
               <div>
                 
-  <section id="annexe-b-utilisation-de-git">
+  <div class="section" id="annexe-b-utilisation-de-git">
 <span id="sec-git"></span><h1>Annexe B : Utilisation de <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#annexe-b-utilisation-de-git" title="Permalink to this headline">¶</a></h1>
 <p>Pour rédiger collectivement ces notes de cours, vous allez utiliser un
 gestionnaire de versions appelé <code class="docutils literal notranslate"><span class="pre">git</span></code>.
 Cette annexe présente les bases du fonctionnement de <code class="docutils literal notranslate"><span class="pre">git</span></code> dans le but de vous
 permettre de contribuer à la rédaction de ce document.</p>
-<section id="le-principe-des-gestionnaires-de-version">
+<div class="section" id="le-principe-des-gestionnaires-de-version">
 <h2>Le principe des gestionnaires de version<a class="headerlink" href="#le-principe-des-gestionnaires-de-version" title="Permalink to this headline">¶</a></h2>
 <p>La gestion de versions est un procédé qui permet de conserver toutes les
 versions (ou “révisions”) d’un ensemble de fichiers.
@@ -352,7 +346,7 @@ nous verrons <a class="reference internal" href="#sec-conflits"><span class="std
 logiciels pour maintenir les fichiers de code source, mais peuvent être utilisés
 plus largement (comme dans le cas de ces notes de cours rédigées
 collectivement).</p>
-<section id="les-branches">
+<div class="section" id="les-branches">
 <h3>Les branches<a class="headerlink" href="#les-branches" title="Permalink to this headline">¶</a></h3>
 <p>Un aspect important de ces systèmes est la notion de <strong>branche</strong>.
 Pour comprendre cette notion, prenons un exemple :</p>
@@ -383,9 +377,9 @@ qu’elle <em>merge</em> la branche <code class="docutils literal notranslate"><
 <p>Cette notion de branches permet notamment d’avoir plusieurs collaborateurs d’un
 même projet qui implémentent leurs modifications dans des branches séparées,
 lesquelles ne seront intégrées au projet que si le résultat est satisfaisant.</p>
-</section>
-</section>
-<section id="le-logiciel-git">
+</div>
+</div>
+<div class="section" id="le-logiciel-git">
 <h2>Le logiciel <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#le-logiciel-git" title="Permalink to this headline">¶</a></h2>
 <p>Pour l’édition collaborative de ce document, nous allons utiliser <code class="docutils literal notranslate"><span class="pre">git</span></code>,
 qui est une référence en termes de logiciels de gestion de version.</p>
@@ -522,7 +516,7 @@ commande :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull origin &lt;NOM_DE_LA_BRANCHE_CIBLE_SUR_LE_DEPOT_DISTANT&gt;
 </pre></div>
 </div>
-<section id="la-gestion-des-conflits">
+<div class="section" id="la-gestion-des-conflits">
 <span id="sec-conflits"></span><h3>La gestion des conflits<a class="headerlink" href="#la-gestion-des-conflits" title="Permalink to this headline">¶</a></h3>
 <p>Lorsque plusieurs personnes travaillent sur un même projet, il se peut qu’elles
 modifient les mêmes fichiers. Tant qu’elles ne travaillent pas sur la même
@@ -609,9 +603,9 @@ git commit -m <span class="s2">&quot;Finalisation merge super_modifs&quot;</span
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="le-service-web-github">
+</div>
+</div>
+<div class="section" id="le-service-web-github">
 <span id="sec-github"></span><h2>Le service web GitHub<a class="headerlink" href="#le-service-web-github" title="Permalink to this headline">¶</a></h2>
 <p>GitHub est un service web qui fournit à la fois des fonctionnalités
 d’hébergement de dépôts <code class="docutils literal notranslate"><span class="pre">git</span></code> (votre dépôt distant pour ce projet sera donc
@@ -629,16 +623,16 @@ cela est indiqué par un bouton vert sur la page d’accueil de votre <em>fork</
 <li><p>créer une <strong>Pull Request</strong> sur le dépôt initial (<code class="docutils literal notranslate"><span class="pre">rtavenar/mongo_book</span></code>)
 pour demander l’intégration de vos changements sur le dépôt de “référence”.</p></li>
 </ol>
-</section>
-<section id="le-client-github-desktop">
+</div>
+<div class="section" id="le-client-github-desktop">
 <span id="sec-gh-desktop"></span><h2>Le client GitHub Desktop<a class="headerlink" href="#le-client-github-desktop" title="Permalink to this headline">¶</a></h2>
 <p>GitHub fournit une interface graphique permettant de manipuler vos dépôts
 <code class="docutils literal notranslate"><span class="pre">git</span></code>, nommée GitHub Desktop.
 N’hésitez pas à l’utiliser si les lignes de commande vous font peur.
 Ce logiciel semble être disponible sur les principaux OS
 (cf <a class="reference external" href="https://github.com/shiftkey/desktop">ce lien</a> pour les utilisateurs Linux).</p>
-</section>
-<section id="a-vous-de-jouer">
+</div>
+<div class="section" id="a-vous-de-jouer">
 <h2>À vous de jouer<a class="headerlink" href="#a-vous-de-jouer" title="Permalink to this headline">¶</a></h2>
 <p>Une fois les parties de ce document attribuées chacune à un groupe, vous
 devrez :</p>
@@ -652,8 +646,8 @@ permettra de demander l’intégration de votre chapitre rédigé dans l’ouvra
 complet
 (date limite à définir)</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

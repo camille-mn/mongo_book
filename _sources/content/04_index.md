@@ -100,6 +100,19 @@ On récupère les utilisateurs de 20 ans et dont l'id est compris entre 10 000 e
 
 ## Index composés
 
+Il est également possible de créer des index non pas sur un mais sur plusieurs champs de la base de données, on appelle alors un tel index un "index composé". L'intérêt d'une telle pratique est de lier des champs entre eux et d'optimiser grandement des requêtes portant sur ces derniers. Si l'on s'attend à effectuer de telles requêtes, alors créer un index composé devient judicieux.
+
+* Création d'un index composé
+
+```javascript
+db.nomDeLaCollection.createIndex({"cle1": 1, "cle2": 1}
+```
+
+```{admonition} ⚠️ Attention
+:class: tip
+L'ordre dans lequel vous déclarez vos champs à une importance capitale dans le résultat renvoyé par la requête. Par exemple, l'index composé suivant : db.nomDeLaCollection.createIndex({"cle2": 1, "cle1": 1}, ne correspond pas du tout à l'index vu juste au-dessus. Les résultats renvoyés par une requête utilisant ces deux index seront donc totalement différents.
+```
+
 ## Requêtes et Index textuels
 
 Lorsque l'on veut interroger notre base de données sur un champ de type "chaîne de caractères", deux méthodes s'offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur le champ. L'avantage de la première méthode est une très grande précision, et on l'utilisera donc lorsque l'on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l'index pour effectuer une recherche de type "moteur de recherche", renvoyant des résultats proches de ce qui a été demandé.
@@ -128,21 +141,34 @@ Ici, "cle" désigne le champ dans lequel on souhaite rechercher et "exemple" la 
 
 Une liste de toutes les contraintes existantes est disponible ici : https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended.
 
-# test 
-_Exemple 1 : Liste des discours pour lesquels l’orateur a un prénom qui commence par la lettre J :
+_Exemple 1 : Liste des discours pour lesquels l’orateur a un prénom qui commence par la lettre J_
 
 ```{code-cell}
 db.discours.find({"name" : /^J/i})
 ```
   
-_Exemple 2 : Liste des discours pour lesquels l’orateur a un prénom composé. :
+_Exemple 2 : Liste des discours pour lesquels l’orateur a un prénom composé_
 
 ```{code-cell}
 db.discours.find({"name" : /-.* /})
 ```
 
-
 * Création d'un index textuel
+
+Il existe deux manières de créer un index textuel, sur un attribut précis ou alors sur l'ensemble des attributs :
+
+_Pour un attribut précis, ici "cle" :_
+
+```javascript
+db.coll.createIndex({"cle" : "text"})
+```
+
+_Pour tous les attributs :_
+
+```javascript
+db.nomDeLaCollection.createIndex({"$**" : "text"})
+```
+
 * Requêtes avancées utilisant un index textuel
 
 
