@@ -475,7 +475,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21b06&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a162e15&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -521,7 +521,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21b36&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a162e35&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -562,7 +562,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21dad&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a1630b9&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -608,7 +608,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21df3&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a1630ff&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -644,7 +644,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21e1a&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a163127&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -685,7 +685,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21e53&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a16315f&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -731,7 +731,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21f4f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a16325b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -777,7 +777,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d21f58&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a163266&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -818,7 +818,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d2216d&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a16347b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -864,7 +864,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b183b6bf26924d9d2228f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606b1fe12407d4d57a16359d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -936,6 +936,14 @@ Par exemple, l’index composé suivant : db.nomDeLaCollection.createIndex({“c
 à l’index vu juste au-dessus.
 Les résultats renvoyés par une requête utilisant ces deux index seront donc totalement différents.</p>
 </div>
+<ul class="simple">
+<li><p>Exemple de requête utilisant un index composé</p></li>
+</ul>
+<p>Nous avons déjà vu un tel exemple, en effet si nous revenons un peu plus haut, nous avons déjà donné une requête de ce type :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">20</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">$gte</span><span class="o">:</span> <span class="s2">&quot;user100000&quot;</span><span class="p">,</span> <span class="nx">$lte</span><span class="o">:</span><span class="s2">&quot;user100000&quot;</span><span class="p">}})</span>
+</pre></div>
+</div>
+<p>Ici, on utilise bien l’index “age_1_name_1”, car en filtrant les résultats en premier par l’age, la deuxième partie de la requête, portant sur le nom, est bien plus efficace car le champ de recherche est réduit grandement par la première partie.</p>
 </div>
 <div class="section" id="requetes-et-index-textuels">
 <h2><span class="section-number">4.5. </span>Requêtes et Index textuels<a class="headerlink" href="#requetes-et-index-textuels" title="Permalink to this headline">¶</a></h2>
