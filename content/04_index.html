@@ -345,7 +345,7 @@
 <div class="section" id="quand-les-utiliser">
 <h2><span class="section-number">4.2. </span>Quand les utiliser ?<a class="headerlink" href="#quand-les-utiliser" title="Permalink to this headline">¶</a></h2>
 <p>On met en place des index à chaque fois qu’on s’attend à avoir beaucoup de requêtes sur une clé (resp. un ensemble de clés).
-Par exemple, on souhaite récupérer les notes d’un étudiant à l’aide de son numéro étudiant. Il faudra alors mettre un index sur la clé “numéro étudiant” afin des réaliser des requetes efficaces pour retrouver toutes les informations de l’étudiant en fonction de son numéro.</p>
+Par exemple, on souhaite récupérer les notes d’un étudiant à l’aide de son numéro étudiant. Il faudra alors mettre un index sur la clé “numéro étudiant” afin de réaliser des requêtes efficaces pour retrouver toutes les informations de l’étudiant en fonction de son numéro.</p>
 <div class="tip admonition">
 <p class="admonition-title">⚠️ Attention</p>
 <p>On ne peut pas toujours utiliser des index. En effet, les index rendent la mise à jour de la base fastidieuse : à chaque fois que vous
@@ -370,23 +370,7 @@ attendez à devoir faire des mises à jour régulières.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---
-The server generated these startup warnings when booting: 
-        2021-04-05T15:08:49.721+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
-        2021-04-05T15:08:50.455+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
-        2021-04-05T15:08:50.455+00:00: /sys/kernel/mm/transparent_hugepage/enabled is &#39;always&#39;. We suggest setting it to &#39;never&#39;
----
----
-        Enable MongoDB&#39;s free cloud-based monitoring service, which will then receive and display
-        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
-
-        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
-        and anyone you share the URL with. MongoDB may use this information to make product
-        improvements and to suggest MongoDB products and deployment options to you.
-
-        To enable free monitoring, run the following command: db.enableFreeMonitoring()
-        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
----
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>switched to db food
 </pre></div>
 </div>
 </div>
@@ -417,7 +401,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 <ul class="simple">
 <li><p>Récupération d’index</p></li>
 </ul>
-<p>Lorsque l’on prend en main une nouvelle base mongoDB, il est judicieux de se renseigner sur les index déja créés, afin de construire les requêtes les plus optimisées possible. Pour cela, on utilise getIndexes :</p>
+<p>Lorsque l’on prend en main une nouvelle base mongoDB, il est judicieux de se renseigner sur les index déjà créés, afin de construire les requêtes les plus optimisées possible. Pour cela, on utilise getIndexes :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">collec</span><span class="p">.</span><span class="nx">getIndexes</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -481,7 +465,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 <ul class="simple">
 <li><p>Opérateurs bénéficiant de l’index</p></li>
 </ul>
-<p>Construire une requête mongoDB utilisant des index ne difèrent pas d’une requête n’en utilisant pas, toutefois, certains opérateurs logiques bénéficient tout particlulièrement de la présence d’un ou plusieurs index. Il est donc pertinent de construire des index si vous pensez utilisez ces opérateurs.</p>
+<p>Construire une requête mongoDB utilisant des index ne diffèrent pas d’une requête n’en utilisant pas, toutefois, certains opérateurs logiques bénéficient tout particulièrement de la présence d’un ou plusieurs index. Il est donc pertinent de construire des index si vous pensez utiliser ces opérateurs.</p>
 <p><em>Exemple 1 : Opérateur égal (:, $eq)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,7 +475,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1b7fc&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17904&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -537,7 +521,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1b81e&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17926&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -578,7 +562,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1baa2&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17bac&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -624,7 +608,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bae9&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17bf1&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -660,7 +644,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bb0f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17c18&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -701,7 +685,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bb47&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17c55&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -747,7 +731,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bc45&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17d4d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -793,7 +777,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bc4f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17d57&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -834,7 +818,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1be63&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c17f6b&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -880,7 +864,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606b28064bcfa661a0a1bf85&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606c031635257a3609c1808c&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -963,7 +947,7 @@ Les résultats renvoyés par une requête utilisant ces deux index seront donc t
 </div>
 <div class="section" id="requetes-et-index-textuels">
 <h2><span class="section-number">4.5. </span>Requêtes et Index textuels<a class="headerlink" href="#requetes-et-index-textuels" title="Permalink to this headline">¶</a></h2>
-<p>Lorsque l’on veut interroger notre base de données sur un champ de type “chaîne de caractères”, deux méthodes s’offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur le champ. L’avantage de la première méthode est une très grande précision, et on l’utilisera donc lorsque l’on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l’index pour effectuer une recherche de type “moteur de recherche”, renvoyant des résultats proches de ce qui a été demandé.</p>
+<p>Lorsque l’on veut interroger notre base de données sur un champ de type “chaîne de caractères”, deux méthodes s’offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur-le-champ. L’avantage de la première méthode est une très grande précision, et on l’utilisera donc lorsque l’on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l’index pour effectuer une recherche de type “moteur de recherche”, renvoyant des résultats proches de ce qui a été demandé.</p>
 <ul class="simple">
 <li><p>Requêtes textuelles sans index</p></li>
 </ul>
