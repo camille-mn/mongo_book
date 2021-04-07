@@ -468,7 +468,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42baf6e&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e3c7&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -514,7 +514,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42baf90&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e3ea&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -555,7 +555,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42bb215&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e66d&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -601,7 +601,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42bb25a&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e6b3&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -637,7 +637,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42bb282&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e6db&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -678,7 +678,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe88e306b00bb42bb2ba&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e713&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -724,7 +724,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe89e306b00bb42bb3b6&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e80f&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -770,7 +770,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe89e306b00bb42bb3c1&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0e819&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -811,7 +811,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe89e306b00bb42bb5d6&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0ea2e&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -857,7 +857,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dbe89e306b00bb42bb6f6&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606dbef6c9cda1bd27e0eb50&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -912,6 +912,379 @@ Type &quot;it&quot; for more
 </div>
 </div>
 <p>On récupère les utilisateurs de 20 ans et dont l’id est compris entre 10 000 et 100 000.</p>
+<p><em>Exemple 3 : différence d’exécution avec et sans index</em></p>
+<p>Reprenons la requête vue à l’exemple 1, mais cette fois affichons son temps d’exécution :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;cuisine&quot;</span><span class="o">:</span> <span class="s2">&quot;Chinese&quot;</span><span class="p">,</span> <span class="s2">&quot;borough&quot;</span><span class="o">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">}).</span><span class="nx">explain</span><span class="p">(</span><span class="s2">&quot;executionStats&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;queryPlanner&quot; : {
+		&quot;plannerVersion&quot; : 1,
+		&quot;namespace&quot; : &quot;food.NYfood&quot;,
+		&quot;indexFilterSet&quot; : false,
+		&quot;parsedQuery&quot; : {
+			&quot;$and&quot; : [
+				{
+					&quot;borough&quot; : {
+						&quot;$eq&quot; : &quot;Brooklyn&quot;
+					}
+				},
+				{
+					&quot;cuisine&quot; : {
+						&quot;$eq&quot; : &quot;Chinese&quot;
+					}
+				}
+			]
+		},
+		&quot;winningPlan&quot; : {
+			&quot;stage&quot; : &quot;FETCH&quot;,
+			&quot;filter&quot; : {
+				&quot;cuisine&quot; : {
+					&quot;$eq&quot; : &quot;Chinese&quot;
+				}
+			},
+			&quot;inputStage&quot; : {
+				&quot;stage&quot; : &quot;IXSCAN&quot;,
+				&quot;keyPattern&quot; : {
+					&quot;borough&quot; : 1
+				},
+				&quot;indexName&quot; : &quot;borough_1&quot;,
+				&quot;isMultiKey&quot; : false,
+				&quot;multiKeyPaths&quot; : {
+					&quot;borough&quot; : [ ]
+				},
+				&quot;isUnique&quot; : false,
+				&quot;isSparse&quot; : false,
+				&quot;isPartial&quot; : false,
+				&quot;indexVersion&quot; : 2,
+				&quot;direction&quot; : &quot;forward&quot;,
+				&quot;indexBounds&quot; : {
+					&quot;borough&quot; : [
+						&quot;[\&quot;Brooklyn\&quot;, \&quot;Brooklyn\&quot;]&quot;
+					]
+				}
+			}
+		},
+		&quot;rejectedPlans&quot; : [ ]
+	},
+	&quot;executionStats&quot; : {
+		&quot;executionSuccess&quot; : true,
+		&quot;nReturned&quot; : 763,
+		&quot;executionTimeMillis&quot; : 10,
+		&quot;totalKeysExamined&quot; : 6085,
+		&quot;totalDocsExamined&quot; : 6085,
+		&quot;executionStages&quot; : {
+			&quot;stage&quot; : &quot;FETCH&quot;,
+			&quot;filter&quot; : {
+				&quot;cuisine&quot; : {
+					&quot;$eq&quot; : &quot;Chinese&quot;
+				}
+			},
+			&quot;nReturned&quot; : 763,
+			&quot;executionTimeMillisEstimate&quot; : 1,
+			&quot;works&quot; : 6086,
+			&quot;advanced&quot; : 763,
+			&quot;needTime&quot; : 5322,
+			&quot;needYield&quot; : 0,
+			&quot;saveState&quot; : 6,
+			&quot;restoreState&quot; : 6,
+			&quot;isEOF&quot; : 1,
+			&quot;docsExamined&quot; : 6085,
+			&quot;alreadyHasObj&quot; : 0,
+			&quot;inputStage&quot; : {
+				&quot;stage&quot; : &quot;IXSCAN&quot;,
+				&quot;nReturned&quot; : 6085,
+				&quot;executionTimeMillisEstimate&quot; : 0,
+				&quot;works&quot; : 6086,
+				&quot;advanced&quot; : 6085,
+				&quot;needTime&quot; : 0,
+				&quot;needYield&quot; : 0,
+				&quot;saveState&quot; : 6,
+				&quot;restoreState&quot; : 6,
+				&quot;isEOF&quot; : 1,
+				&quot;keyPattern&quot; : {
+					&quot;borough&quot; : 1
+				},
+				&quot;indexName&quot; : &quot;borough_1&quot;,
+				&quot;isMultiKey&quot; : false,
+				&quot;multiKeyPaths&quot; : {
+					&quot;borough&quot; : [ ]
+				},
+				&quot;isUnique&quot; : false,
+				&quot;isSparse&quot; : false,
+				&quot;isPartial&quot; : false,
+				&quot;indexVersion&quot; : 2,
+				&quot;direction&quot; : &quot;forward&quot;,
+				&quot;indexBounds&quot; : {
+					&quot;borough&quot; : [
+						&quot;[\&quot;Brooklyn\&quot;, \&quot;Brooklyn\&quot;]&quot;
+					]
+				},
+				&quot;keysExamined&quot; : 6085,
+				&quot;seeks&quot; : 1,
+				&quot;dupsTested&quot; : 0,
+				&quot;dupsDropped&quot; : 0
+			}
+		}
+	},
+	&quot;serverInfo&quot; : {
+		&quot;host&quot; : &quot;4b0087fcccf3&quot;,
+		&quot;port&quot; : 27017,
+		&quot;version&quot; : &quot;4.4.4&quot;,
+		&quot;gitVersion&quot; : &quot;8db30a63db1a9d84bdcad0c83369623f708e0397&quot;
+	},
+	&quot;ok&quot; : 1
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rajoutons maintenant l’index “cuisine” (l’index quartier ayant déjà été créé plus haut) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">createIndex</span><span class="p">({</span><span class="s2">&quot;cuisine&quot;</span><span class="o">:</span> <span class="mf">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;createdCollectionAutomatically&quot; : false,
+	&quot;numIndexesBefore&quot; : 4,
+	&quot;numIndexesAfter&quot; : 5,
+	&quot;ok&quot; : 1
+}
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut maintenant relancer la requête et observer la différence :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">NYfood</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;cuisine&quot;</span><span class="o">:</span> <span class="s2">&quot;Chinese&quot;</span><span class="p">,</span> <span class="s2">&quot;borough&quot;</span><span class="o">:</span> <span class="s2">&quot;Brooklyn&quot;</span><span class="p">}).</span><span class="nx">explain</span><span class="p">(</span><span class="s2">&quot;executionStats&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;queryPlanner&quot; : {
+		&quot;plannerVersion&quot; : 1,
+		&quot;namespace&quot; : &quot;food.NYfood&quot;,
+		&quot;indexFilterSet&quot; : false,
+		&quot;parsedQuery&quot; : {
+			&quot;$and&quot; : [
+				{
+					&quot;borough&quot; : {
+						&quot;$eq&quot; : &quot;Brooklyn&quot;
+					}
+				},
+				{
+					&quot;cuisine&quot; : {
+						&quot;$eq&quot; : &quot;Chinese&quot;
+					}
+				}
+			]
+		},
+		&quot;winningPlan&quot; : {
+			&quot;stage&quot; : &quot;FETCH&quot;,
+			&quot;filter&quot; : {
+				&quot;borough&quot; : {
+					&quot;$eq&quot; : &quot;Brooklyn&quot;
+				}
+			},
+			&quot;inputStage&quot; : {
+				&quot;stage&quot; : &quot;IXSCAN&quot;,
+				&quot;keyPattern&quot; : {
+					&quot;cuisine&quot; : 1
+				},
+				&quot;indexName&quot; : &quot;cuisine_1&quot;,
+				&quot;isMultiKey&quot; : false,
+				&quot;multiKeyPaths&quot; : {
+					&quot;cuisine&quot; : [ ]
+				},
+				&quot;isUnique&quot; : false,
+				&quot;isSparse&quot; : false,
+				&quot;isPartial&quot; : false,
+				&quot;indexVersion&quot; : 2,
+				&quot;direction&quot; : &quot;forward&quot;,
+				&quot;indexBounds&quot; : {
+					&quot;cuisine&quot; : [
+						&quot;[\&quot;Chinese\&quot;, \&quot;Chinese\&quot;]&quot;
+					]
+				}
+			}
+		},
+		&quot;rejectedPlans&quot; : [
+			{
+				&quot;stage&quot; : &quot;FETCH&quot;,
+				&quot;filter&quot; : {
+					&quot;cuisine&quot; : {
+						&quot;$eq&quot; : &quot;Chinese&quot;
+					}
+				},
+				&quot;inputStage&quot; : {
+					&quot;stage&quot; : &quot;IXSCAN&quot;,
+					&quot;keyPattern&quot; : {
+						&quot;borough&quot; : 1
+					},
+					&quot;indexName&quot; : &quot;borough_1&quot;,
+					&quot;isMultiKey&quot; : false,
+					&quot;multiKeyPaths&quot; : {
+						&quot;borough&quot; : [ ]
+					},
+					&quot;isUnique&quot; : false,
+					&quot;isSparse&quot; : false,
+					&quot;isPartial&quot; : false,
+					&quot;indexVersion&quot; : 2,
+					&quot;direction&quot; : &quot;forward&quot;,
+					&quot;indexBounds&quot; : {
+						&quot;borough&quot; : [
+							&quot;[\&quot;Brooklyn\&quot;, \&quot;Brooklyn\&quot;]&quot;
+						]
+					}
+				}
+			},
+			{
+				&quot;stage&quot; : &quot;FETCH&quot;,
+				&quot;filter&quot; : {
+					&quot;$and&quot; : [
+						{
+							&quot;borough&quot; : {
+								&quot;$eq&quot; : &quot;Brooklyn&quot;
+							}
+						},
+						{
+							&quot;cuisine&quot; : {
+								&quot;$eq&quot; : &quot;Chinese&quot;
+							}
+						}
+					]
+				},
+				&quot;inputStage&quot; : {
+					&quot;stage&quot; : &quot;AND_SORTED&quot;,
+					&quot;inputStages&quot; : [
+						{
+							&quot;stage&quot; : &quot;IXSCAN&quot;,
+							&quot;keyPattern&quot; : {
+								&quot;borough&quot; : 1
+							},
+							&quot;indexName&quot; : &quot;borough_1&quot;,
+							&quot;isMultiKey&quot; : false,
+							&quot;multiKeyPaths&quot; : {
+								&quot;borough&quot; : [ ]
+							},
+							&quot;isUnique&quot; : false,
+							&quot;isSparse&quot; : false,
+							&quot;isPartial&quot; : false,
+							&quot;indexVersion&quot; : 2,
+							&quot;direction&quot; : &quot;forward&quot;,
+							&quot;indexBounds&quot; : {
+								&quot;borough&quot; : [
+									&quot;[\&quot;Brooklyn\&quot;, \&quot;Brooklyn\&quot;]&quot;
+								]
+							}
+						},
+						{
+							&quot;stage&quot; : &quot;IXSCAN&quot;,
+							&quot;keyPattern&quot; : {
+								&quot;cuisine&quot; : 1
+							},
+							&quot;indexName&quot; : &quot;cuisine_1&quot;,
+							&quot;isMultiKey&quot; : false,
+							&quot;multiKeyPaths&quot; : {
+								&quot;cuisine&quot; : [ ]
+							},
+							&quot;isUnique&quot; : false,
+							&quot;isSparse&quot; : false,
+							&quot;isPartial&quot; : false,
+							&quot;indexVersion&quot; : 2,
+							&quot;direction&quot; : &quot;forward&quot;,
+							&quot;indexBounds&quot; : {
+								&quot;cuisine&quot; : [
+									&quot;[\&quot;Chinese\&quot;, \&quot;Chinese\&quot;]&quot;
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	&quot;executionStats&quot; : {
+		&quot;executionSuccess&quot; : true,
+		&quot;nReturned&quot; : 763,
+		&quot;executionTimeMillis&quot; : 6,
+		&quot;totalKeysExamined&quot; : 2418,
+		&quot;totalDocsExamined&quot; : 2418,
+		&quot;executionStages&quot; : {
+			&quot;stage&quot; : &quot;FETCH&quot;,
+			&quot;filter&quot; : {
+				&quot;borough&quot; : {
+					&quot;$eq&quot; : &quot;Brooklyn&quot;
+				}
+			},
+			&quot;nReturned&quot; : 763,
+			&quot;executionTimeMillisEstimate&quot; : 0,
+			&quot;works&quot; : 2419,
+			&quot;advanced&quot; : 763,
+			&quot;needTime&quot; : 1655,
+			&quot;needYield&quot; : 0,
+			&quot;saveState&quot; : 3,
+			&quot;restoreState&quot; : 3,
+			&quot;isEOF&quot; : 1,
+			&quot;docsExamined&quot; : 2418,
+			&quot;alreadyHasObj&quot; : 0,
+			&quot;inputStage&quot; : {
+				&quot;stage&quot; : &quot;IXSCAN&quot;,
+				&quot;nReturned&quot; : 2418,
+				&quot;executionTimeMillisEstimate&quot; : 0,
+				&quot;works&quot; : 2419,
+				&quot;advanced&quot; : 2418,
+				&quot;needTime&quot; : 0,
+				&quot;needYield&quot; : 0,
+				&quot;saveState&quot; : 3,
+				&quot;restoreState&quot; : 3,
+				&quot;isEOF&quot; : 1,
+				&quot;keyPattern&quot; : {
+					&quot;cuisine&quot; : 1
+				},
+				&quot;indexName&quot; : &quot;cuisine_1&quot;,
+				&quot;isMultiKey&quot; : false,
+				&quot;multiKeyPaths&quot; : {
+					&quot;cuisine&quot; : [ ]
+				},
+				&quot;isUnique&quot; : false,
+				&quot;isSparse&quot; : false,
+				&quot;isPartial&quot; : false,
+				&quot;indexVersion&quot; : 2,
+				&quot;direction&quot; : &quot;forward&quot;,
+				&quot;indexBounds&quot; : {
+					&quot;cuisine&quot; : [
+						&quot;[\&quot;Chinese\&quot;, \&quot;Chinese\&quot;]&quot;
+					]
+				},
+				&quot;keysExamined&quot; : 2418,
+				&quot;seeks&quot; : 1,
+				&quot;dupsTested&quot; : 0,
+				&quot;dupsDropped&quot; : 0
+			}
+		}
+	},
+	&quot;serverInfo&quot; : {
+		&quot;host&quot; : &quot;4b0087fcccf3&quot;,
+		&quot;port&quot; : 27017,
+		&quot;version&quot; : &quot;4.4.4&quot;,
+		&quot;gitVersion&quot; : &quot;8db30a63db1a9d84bdcad0c83369623f708e0397&quot;
+	},
+	&quot;ok&quot; : 1
+}
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="index-composes">
 <h2><span class="section-number">4.4. </span>Index composés<a class="headerlink" href="#index-composes" title="Permalink to this headline">¶</a></h2>
