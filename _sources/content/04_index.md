@@ -44,7 +44,7 @@ où vous vous attendez à devoir faire des mises à jour régulières.
 * Création d'un index
 
 ```javascript
-db.`nomDeLaCollection`.createIndex({"cle":1})
+db.nomDeLaCollection.createIndex({"cle":1})
 ```
 On crée ici un index dans la collection 'collec' de la base de données courante 'db'. On donne ensuite le nom du champs sur lequel on va ensuite créer la clé. Le ":1" signifie que l'index va trier les données dans l'ordre croissant.
 
@@ -175,7 +175,7 @@ Enfin, on peut classer les documents par pertinence par rapport à notre requêt
 db.nomDeLaCollection.find({$text: {$search: "ma requête"}},{"score": {$meta: "textScore"}}).sort({score: {$meta: "textScore"}})
 ```
 
-Cette requête renvoie une liste des documents ordonnée par pertinence, si vous souhaitez juste afficher le score de chaque document, il suffit d'enlever ".sort({score: {$meta: "textScore"}})".
+Cette requête renvoie une liste des documents ordonnée par pertinence, si vous souhaitez juste afficher le score de chaque document, il suffit d'enlever `.sort({score: {$meta: "textScore"}})`.
 
 _Exemple 1 : Liste des documents comportant le terme "famille" mais pas le terme "politique"._
 
