@@ -475,7 +475,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f251614fc&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acc58&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -521,7 +521,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f2516151e&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acc7a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -562,7 +562,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f251617a2&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acefe&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -608,7 +608,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f251617ea&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acf45&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -644,7 +644,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f2516180f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acf6c&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -685,7 +685,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f25161848&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160acfa4&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -731,7 +731,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f25161944&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160ad0a0&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -777,7 +777,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f2516194f&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160ad0aa&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -818,7 +818,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f25161b64&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160ad2c0&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -864,7 +864,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606c0369bcda5f1f25161c85&quot;),
+	&quot;_id&quot; : ObjectId(&quot;606db109e80a26e4160ad3e1&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -947,45 +947,7 @@ Les résultats renvoyés par une requête utilisant ces deux index seront donc t
 </div>
 <div class="section" id="requetes-et-index-textuels">
 <h2><span class="section-number">4.5. </span>Requêtes et Index textuels<a class="headerlink" href="#requetes-et-index-textuels" title="Permalink to this headline">¶</a></h2>
-<p>Lorsque l’on veut interroger notre base de données sur un champ de type “chaîne de caractères”, deux méthodes s’offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur-le-champ. L’avantage de la première méthode est une très grande précision, et on l’utilisera donc lorsque l’on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l’index pour effectuer une recherche de type “moteur de recherche”, renvoyant des résultats proches de ce qui a été demandé.</p>
-<ul class="simple">
-<li><p>Requêtes textuelles sans index</p></li>
-</ul>
-<p>La forme la plus basique d’une requête textuelle est la suivante :</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">nomDeLaCollection</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;cle&quot;</span><span class="o">:</span> <span class="sr">/exemple/</span><span class="p">})</span>
-</pre></div>
-</div>
-<p>Ici, “cle” désigne le champ dans lequel on souhaite rechercher et “exemple” la sous-chaîne que l’on recherche. Les // entourant la sous-chaîne sont en réalité une contrainte permettant d’affiner le résultat. Parmi les contraintes disponibles sur les requêtes textuelles, on peut citer :</p>
-<p>-&gt; /exemple/ : on ne renvoie que les chaînes contenant la sous-chaîne “exemple”.</p>
-<p>-&gt; /exemple/i : pareil, mais sans se soucier dans la casse (majuscules/miniscules).</p>
-<p>-&gt; /^exemple/ : que les sous-chaînes commençant par exemple.</p>
-<p>-&gt; /exemple$/ : que les sous-chaînes finissant par exemple.</p>
-<p>-&gt; /ex.mple/ : que les sous-chaînes contenant “ex”, suivi d’un caractère quelconque (“.” == “e” dans notre exemple), suivit de “mple”.</p>
-<p>-&gt; /ex.*le/ : que les sous-chaînes contenant “ex”, suivi d’une série de caractères quelconque (“.*” == “emp” dans notre exemple), suivit de “le”.</p>
-<p>Une liste de toutes les contraintes existantes est disponible ici : <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended">https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended</a>.</p>
-<p><em>Exemple 1 : Liste des discours pour lesquels l’orateur a un prénom qui commence par la lettre J</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">use</span> <span class="nx">elections2007</span>
-<span class="nx">db</span><span class="p">.</span><span class="nx">discours</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="sr">/^J/i</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>uncaught exception: SyntaxError: missing ) after argument list :
-@(shellhelp2):1:56
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Exemple 2 : Liste des discours pour lesquels l’orateur a un prénom composé</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">db</span><span class="p">.</span><span class="nx">discours</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="sr">/-.* /</span><span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Lorsque l’on veut interroger notre base de données sur un champ de type “chaîne de caractères”, deux méthodes s’offrent à nous : on peut utiliser soit des requêtes régulières, soit un index textuel qui a été créé sur-le-champ. L’avantage de la première méthode est une très grande précision, et on l’utilisera donc lorsque l’on recherchera du texte très précis, tandis que la seconde méthode utilise la puissance de l’index pour effectuer une recherche de type “moteur de recherche”, renvoyant des résultats proches de ce qui a été demandé. Ici, comme on s’intéresse uniquement au index, nous ne développerons que la seconde méthode.</p>
 <ul class="simple">
 <li><p>Création d’un index textuel</p></li>
 </ul>
