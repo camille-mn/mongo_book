@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Les index &#8212; MongoDB : notes de cours</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Les requêtes d’agrégation" href="05_agreg.html" />
     <link rel="prev" title="3. Attributs de type date" href="03_dates.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,30 +71,30 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">MongoDB : notes de cours</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">MongoDB : notes de cours</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="00_intro.html">
    MongoDB : Notes de cours
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Chapitres
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_find.html">
    1. Premières requêtes
@@ -128,11 +125,16 @@
    6. Les requêtes de modification
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="07_scripts.html">
    7. Effectuer des requêtes depuis des programmes Python ou R
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07_scripts_py.html">
      7.1. Requêtes depuis Python :
@@ -154,16 +156,14 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Annexes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="app_exemple.html">
    Annexe A : Exemple de fichier source
@@ -181,6 +181,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -249,12 +250,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -280,12 +281,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-quoi-servent-ils">
    4.1. À quoi servent-ils ?
@@ -318,8 +318,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -468,7 +467,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ff980&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf448&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1269&quot;,
 		&quot;loc&quot; : {
@@ -514,7 +513,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40358429&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ff9a4&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf46a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;976&quot;,
 		&quot;loc&quot; : {
@@ -555,7 +554,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40363920&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffc26&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf6ee&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -601,7 +600,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40388386&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffc6d&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf735&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;463&quot;,
 		&quot;loc&quot; : {
@@ -637,7 +636,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40390653&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffc94&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf75c&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;152&quot;,
 		&quot;loc&quot; : {
@@ -678,7 +677,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40391528&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffccc&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf793&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;404&quot;,
 		&quot;loc&quot; : {
@@ -724,7 +723,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40393181&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffdc9&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf891&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;5100&quot;,
 		&quot;loc&quot; : {
@@ -770,7 +769,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398688&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2ffdd3&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eaf89a&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;425&quot;,
 		&quot;loc&quot; : {
@@ -811,7 +810,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40398904&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a2fffe7&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eafaae&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;1955&quot;,
 		&quot;loc&quot; : {
@@ -857,7 +856,7 @@ Le tri n’a cependant pas d’importance sur l’efficacité de la requête.</p
 	&quot;restaurant_id&quot; : &quot;40537963&quot;
 }
 {
-	&quot;_id&quot; : ObjectId(&quot;606dcf41d54b30565a30010d&quot;),
+	&quot;_id&quot; : ObjectId(&quot;6083ed229b93c50e99eafbcf&quot;),
 	&quot;address&quot; : {
 		&quot;building&quot; : &quot;6820&quot;,
 		&quot;loc&quot; : {
@@ -974,7 +973,7 @@ Type &quot;it&quot; for more
 	&quot;executionStats&quot; : {
 		&quot;executionSuccess&quot; : true,
 		&quot;nReturned&quot; : 763,
-		&quot;executionTimeMillis&quot; : 12,
+		&quot;executionTimeMillis&quot; : 10,
 		&quot;totalKeysExamined&quot; : 6085,
 		&quot;totalDocsExamined&quot; : 6085,
 		&quot;executionStages&quot; : {
@@ -1032,10 +1031,10 @@ Type &quot;it&quot; for more
 		}
 	},
 	&quot;serverInfo&quot; : {
-		&quot;host&quot; : &quot;c49a3a346d07&quot;,
+		&quot;host&quot; : &quot;d13ce387b550&quot;,
 		&quot;port&quot; : 27017,
-		&quot;version&quot; : &quot;4.4.4&quot;,
-		&quot;gitVersion&quot; : &quot;8db30a63db1a9d84bdcad0c83369623f708e0397&quot;
+		&quot;version&quot; : &quot;4.4.5&quot;,
+		&quot;gitVersion&quot; : &quot;ff5cb77101b052fa02da43b8538093486cf9b3f7&quot;
 	},
 	&quot;ok&quot; : 1
 }
@@ -1274,10 +1273,10 @@ Type &quot;it&quot; for more
 		}
 	},
 	&quot;serverInfo&quot; : {
-		&quot;host&quot; : &quot;c49a3a346d07&quot;,
+		&quot;host&quot; : &quot;d13ce387b550&quot;,
 		&quot;port&quot; : 27017,
-		&quot;version&quot; : &quot;4.4.4&quot;,
-		&quot;gitVersion&quot; : &quot;8db30a63db1a9d84bdcad0c83369623f708e0397&quot;
+		&quot;version&quot; : &quot;4.4.5&quot;,
+		&quot;gitVersion&quot; : &quot;ff5cb77101b052fa02da43b8538093486cf9b3f7&quot;
 	},
 	&quot;ok&quot; : 1
 }
@@ -1347,6 +1346,18 @@ Les résultats renvoyés par une requête utilisant ces deux index seront donc t
 </pre></div>
 </div>
 <p>Cette requête renvoie une liste des documents ordonnée par pertinence, si vous souhaitez juste afficher le score de chaque document, il suffit d’enlever <code class="docutils literal notranslate"><span class="pre">.sort({score:</span> <span class="pre">{$meta:</span> <span class="pre">&quot;textScore&quot;}})</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">use</span> <span class="nx">elections2007</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>switched to db elections2007
+</pre></div>
+</div>
+</div>
+</div>
 <p><em>Exemple 1 : Liste des documents comportant le terme “famille” mais pas le terme “politique”.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1355,11 +1366,30 @@ Les résultats renvoyés par une requête utilisant ces deux index seront donc t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: error: {
-	&quot;ok&quot; : 0,
-	&quot;errmsg&quot; : &quot;text index required for $text query (no such collection &#39;food.discours&#39;)&quot;,
-	&quot;code&quot; : 27,
-	&quot;codeName&quot; : &quot;IndexNotFound&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a81&quot;),
+	&quot;name&quot; : &quot;Nicolas Sarkozy&quot;,
+	&quot;content&quot; : &quot;Nicolas Sarkozy, Discours à Villepinte (11/04/07)  Mesdames et Messieurs,    Je veux d&#39;abord parler à ceux d&#39;entre vous qui aujourd&#39;hui vont devenir des citoyens français à part entière. Vous voilà Français, non par le fait du hasard mais parce que vous l&#39;avez voulu. . Français au sang mêlé né d&#39;un père hongrois et d&#39;une mère dont le père était né Grec à Salonique, c&#39;est un honneur pour moi de vous souhaiter la bienvenue non comme à des amis mais comme à des frères et des soeurs. Comme eux, vous avez laissé derrière vous votre terre natale, vos souvenirs d&#39;enfance, vos rêves d&#39;adolescents, vos premières amours. Vous ne partiez pas pour l&#39;exil mais pour la promesse d&#39;un avenir meilleur. Vous avez parcouru un long chemin. Vous voici rendus. Rendus non dans un pays mais dans une famille. C&#39;est dans cette famille qui accueillit jadis mon grand-père et mon père que je vous accueille à mon tour. Elle m&#39;a tout donné et je lui dois tout. Elle vous donnera tout à vous aussi pourvu que vous sachiez la respecter, que vous sachiez l&#39;aimer. Si vous l&#39;aimez elle vous ouvrira les bras, elle vous offrira son coeur. Car être Français ce n&#39;est pas qu&#39;une affaire de statut juridique, c&#39;est aussi une affaire de sentiment. être Français cela ne s&#39;hérite pas, cela se conquiert, cela se mérite tous les jours par l&#39;amour de la France et par le civisme. On est Français parce qu&#39;on veut l&#39;être, parce que l&#39;on se sent Français, parce que la France on l&#39;aime, on la respecte, on en est fier. Parce que l&#39;on se sent envers elle des devoirs, parce que l&#39;on éprouve envers elle une gratitude, une reconnaissance. On est Français quand on aime assez la France pour être prêt à faire quelque chose pour elle. La France c&#39;est une grande famille qui a ses habitudes, qui a ses idées, qui a ses souvenirs, qui a son caractère. Il faut la prendre comme elle est. Il faut l&#39;aimer avec ses qualités et avec ses défauts. Il faut être capable de respecter ses habitudes et de partager son histoire, de faire siens ses souvenirs. Elle ne vous demande pas d&#39;oublier qui vous êtes, d&#39;oublier d&#39;où vous venez. La France ne s&#39;est pas construite sur l&#39;oubli des histoires personnelles. Elle ne s&#39;est pas construite sur l&#39;effacement des consciences individuelles. Elle s&#39;est construite sur l&#39;adhésion. Elle s&#39;est construite sur l&#39;enrichissement de l&#39;identité de chacun par l&#39;identité nationale. être Français c&#39;est pour chacun d&#39;entre nous quelque chose en plus, pas quelque chose en moins. Chaque fois que le cercle de famille s&#39;élargit, chaque fois qu&#39;apparaît un nouveau visage, le visage de la France change. La France d&#39;aujourd&#39;hui n&#39;est pas celle d&#39;il y a cinquante ans, d&#39;il y a cent ans ou d&#39;il y a deux cents ans. La France, elle n&#39;a cessé de changer tout au long de son histoire parce qu&#39;elle n&#39;a jamais cessé d&#39;être un pays ouvert, parce qu&#39;elle n&#39;a jamais été un clan, une race ou une ethnie. La France c&#39;est une volonté de vivre ensemble. La France c&#39;est une idée. La France c&#39;est un idéal offert à tous les hommes. La France c&#39;est chacun d&#39;entre nous avec son histoire, avec sa mémoire, avec son expérience de la vie, avec ses rêves. Maintenant la France c&#39;est vous aussi. La France c&#39;est un destin commun fait de toutes nos destinées individuelles. La France que j&#39;aimerais partager avec vous, la France qui m&#39;a tout donné, ce n&#39;est pas une France enfermée dans son passé, prisonnière de son histoire. C&#39;est une France qui évolue. C&#39;est une France qui vit avec son temps. C&#39;est une France à laquelle chacun apporte sa contribution. C&#39;est une France que chaque histoire personnelle, chaque destin particulier contribue à enrichir, à transformer.  La France d&#39;aujourd&#39;hui, qui est désormais aussi la vôtre, c&#39;est une France de toutes les couleurs et de toutes les religions où s&#39;entremêlent une multitude d&#39;histoires, de souvenirs et de cultures. C&#39;est une France de la diversité, des différences et des mélanges. Cette France de la diversité, cette France métissée, de toutes les couleurs, de toutes les religions, elle ne doit pas se laisser caricaturer par une minorité qui ne lui ressemble pas, qui ne cherche qu&#39;à attiser la violence et la haine. La France de toutes les couleurs et de toutes les religions elle rêve d&#39;emploi, d&#39;école, d&#39;intégration, de promotion sociale. La France de la diversité, elle veut étudier, travailler, s&#39;intégrer. Elle ne réclame rien d&#39;autre que l&#39;égalité des chances.  La France est humaine et parce qu&#39;elle est humaine elle n&#39;est pas toujours à la hauteur de l&#39;idéal qu&#39;elle incarne. Parce qu&#39;elle est humaine il lui arrive de commettre des fautes, il lui arrive d&#39;être injuste. Mais n&#39;exigez pas des fils qu&#39;ils expient les fautes supposées de leur père et de leurs aïeux. Ne vous laissez pas abuser par ceux qui veulent ressusciter les haines du passé qui appartiennent à l&#39;histoire. Désormais la France est votre pays et vous n&#39;en avez plus d&#39;autre. La France c&#39;est vous. C&#39;est notre bien commun. Aimez-la et battez-vous pour qu&#39;elle soit meilleure. Aujourd&#39;hui, la France doute d&#39;elle même, de ses valeurs, de son rôle, de son avenir, de son unité. C&#39;est à ceux qui arrivent de témoigner que l&#39;on peut encore croire en elle. C&#39;est à vous qui êtes devenu Français parce que vous le vouliez de montrer que. C&#39;est à vous à donner à vos enfants le goût de l&#39;étude et le goût du travail pour qu&#39;ils deviennent les exemples d&#39;intégration réussie et de promotion sociale dont la France a tant besoin pour croire de nouveau en elle. C&#39;est à vous à donner l&#39;exemple de l&#39;engagement civique. C&#39;est à vous tous qui allez bientôt voter pour la première fois, de montrer à tous ceux qui sont blasés et qui ont finit par oublier le prix de la démocratie et de la République de montrer ce qu&#39;est un citoyen qui a vraiment à coeur de faire son devoir de citoyen. Ayez à coeur de faire vivre la démocratie et la République elle vous le rendront. La République c&#39;est la compréhension mutuelle, le respect de l&#39;autre et la solidarité. Le but de la République c&#39;est d&#39;arracher du coeur de chacun le sentiment de l&#39;injustice, c&#39;est de permettre à celui qui n&#39;a rien d&#39;être quand même un homme libre, à celui qui travaille de posséder quelque chose, à celui qui commence tout en bas de l&#39;échelle sociale de la gravir aussi haut que ses capacités le lui permettent.  Le but de la République c&#39;est que les chances de réussite soient égales pour tous. C&#39;est que l&#39;enfant soit éduqué, le malade soigné, le vieillard arraché à la solitude, le travailleur respecté, la misère vaincue. Le but de la République c&#39;est la reconnaissance du travail comme source de la propriété et la propriété comme représentation du travail.  La République c&#39;est la foi dans la raison et dans le progrès. C&#39;est l&#39;homme considéré en dehors de ses origines et de ses croyances.  Aimez la République, elle est à vous, et battez-vous comme tant de générations de Français avant vous se sont battues pour que la fraternité ne soit plus seulement un mot gravé sur le fronton des mairies mais devienne une réalité entre les hommes et les femmes de ce pays qui est le vôtre. Battez-vous pour apporter une réponse à tous ceux qui souffrent des blocages de notre société et qui ont le sentiment que quoiqu&#39;ils fassent, ils ne pourront jamais s&#39;en sortir. Battez-vous pour l&#39;égalité des chances. Battez-vous pour que l&#39;on donne plus à ceux qui ont moins, pour que l&#39;on compense les handicaps de ceux qui partent de plus loin sur la ligne de départ de la vie. Il ne faut pas aider seulement les territoires ou les immeubles. Il faut aussi aider les personnes. Aménager les territoires, rénover les immeubles c&#39;est bien. Donner de la sécurité, de l&#39;instruction, du travail à ceux qui les habitent, c&#39;est nécessaire. Cela coûtera cher, infiniment moins cher cependant que l&#39;aggravation des inégalités et du sentiment d&#39;injustice. Battez-vous pour qu&#39;il soit remédié à la défaillance de l&#39;école. Quand l&#39;école est défaillante la promotion sociale et l&#39;égalité des chances sont compromises parce que c&#39;est l&#39;origine sociale qui décide de tout, parce que c&#39;est la capacité des parents à compenser les insuffisances de l&#39;école qui est décisive. Quand tous les jeunes de France cessent d&#39;avoir le minimum de culture commune qui permet de se parler et de se comprendre, quand chaque jeune Français est enfermé dans le monde clos de son langage et de sa pensée, incapable de communiquer avec les autres, d&#39;échanger, de partager des projets et des rêves, alors c&#39;est le grand rêve d&#39;une République universelle et fraternelle qui est le grand rêve de la France qui se brise. Battez-vous pour une école de l&#39;excellence qui pousse chacun à tirer le meilleur de lui-même, à développer ses talents, mais aussi, et c&#39;est peut-être le plus important, à être plus ambitieux pour lui-même. Car l&#39;un des freins les plus importants à la promotion sociale, c&#39;est l&#39;incapacité de beaucoup de jeunes issus de milieu modeste ou de quartiers difficiles, à s&#39;imaginer des objectifs ambitieux et à se croire en mesure de les atteindre. Apprenez à vos enfants que le travail l&#39;égalité des chances, et la promotion sociale. Apprenez leur que le travail c&#39;est le respect, c&#39;est la dignité, c&#39;est la liberté, c&#39;est la citoyenneté réelle.  Ce pays qui est le vôtre est un pays de liberté où chacun peut se battre pour qu&#39;il y est plus de justice et de fraternité. Vous tous qui maintenant avez le droit de vote, vous tous qui maintenant êtes des citoyens à part entière, battez-vous pour que l&#39;enfant de la banlieue déshéritée et celui des beaux quartiers, pour que le fils de l&#39;ouvrier et le fils du paysan, pour que le fils de l&#39;immigré, le petit-fils du rapatrié, le petit-fils du harki, pour que les enfants, qu&#39;ils portent des noms venus d&#39;Afrique du Nord, des noms espagnols, italiens, polonais ou des vieux noms français puissent faire un jour les mêmes rêves et se sentent la même capacité à les réaliser. Si nous rêvons tous d&#39;une France où personne ne soit jugé sur la couleur de sa peau ou sur sa religion ou sur l&#39;adresse de son quartier, mais sur la nature de son caractère, alors notre rêve deviendra plus fort que l&#39;injustice, plus fort que les préjugés. Si nous rêvons tous que les enfants de tous les quartiers, de toutes les couleurs, de toutes les religions qui habitent ce pays qui est le leur puissent partager la même fierté d&#39;être Français, les mêmes rêves et les mêmes ambitions, qu&#39;ils aient le sentiment de vivre dans le même pays avec les mêmes chances et les mêmes droits, et si nous sommes tous prêts à nous battre pour ce rêve comme les générations de Français qui nous ont précédé se sont battues pour leur rêve, alors ce rêve deviendra réalité et la France redeviendra plus forte. Aimez la France et la République , elle vous le rendront. Ce que la France a fait pour ma famille, ce que la France a fait pour moi, elle peut le faire pour vous, elle peut le faire pour vos enfants. Ce que la République m&#39;a donné, elle peut vous le donner aussi, elle peut le donner aussi à vos enfants. Mais si vous ne voulez rien vous n&#39;aurez rien. Désormais la France est votre destin et notre destin est entre nos mains.  Vous êtes Français, n&#39;acceptez plus jamais de subir. Agissez !  Voilà ce que voulais vous dire, un fils et petit fils d&#39;immigrés auquel la France a tout donné et qui pense que la France est le plus beau pays du monde.   &quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a6e&quot;),
+	&quot;name&quot; : &quot;Marie-George Buffet&quot;,
+	&quot;content&quot; : &quot;Marie-George Buffet, Déclaration publique (03/01/07)  L&#39;action des Enfants de Don Quichotte, aux côtés de celles menées par de nombreuses autres associations, a permis de mettre au coeur de la campagne la question des Sans Logis et plus généralement du logement. Aujourd&#39;hui un grand nombre de candidats à l&#39;élection présidentielle ont signé leur Charte. Au même moment où l&#39;émissaire du candidat Sarkozy apportait son soutien quai de Jemmapes, le Ministre de l&#39;intérieur expulsait les SDF du Quai de la Gare. Le département des Hauts de Seine, présidé par ce même Nicolas Sarkozy, compte 17 villes, toutes dirigées par la droite, ne respectant pas la loi des 20% de logements sociaux et décide la mise en vente de 4000 logements du parc social afin d&#39;exclure les familles les plus pauvres du département le plus riche. Je demande un débat des signataires de la Charte, candidats à la présidentielle, lors d&#39;une grande émission télévisée sur les mesures immédiates qui peuvent être prises en faveur des SDF et du droit au logement, les propositions qu&#39;ils verseront dans la campagne et les moyens qu&#39;ils comptent y affecter. Le gouvernement à indiqué qu&#39;il soumettra à l&#39;Assemblée nationale un projet de loi pour créer un droit au logement opposable avant la fin de la session parlementaire. Que les 100 000 sans domicile fixe, les 260 000 jeunes logés chez leurs parents faute de mieux, les 800 000 mal logés, les 1 300 000 demandeurs de logements, les 4 500 000 personnes en situation de logements surpeuplés en France (chiffres de la Fondation Abbé Pierre) puissent bénéficier d&#39;un nouveau droit est une bonne chose. Il doit pouvoir s&#39;exercer en direction de l&#39;État et de son représentant le Préfet. Mais, sans attendre, ce que veulent toutes ces personnes c&#39;est un logement digne où vivre. Pour cela, je propose : - La mise en chantier de 600 000 logements sociaux en 5 ans - Le retour de l&#39;aide à la &#39;pierre&#39; - L&#39;obligation d&#39;aller vers la construction des 20% de logements sociaux par ville comme l&#39;exige la loi SRU sous peine de non éligibilité des maires - L&#39;attribution des logements sociaux sans plancher de ressources - Le gel immédiat des loyers avec compensation pour les Offices HLM - Le plafonnement des loyers à 20% des ressources - Un plan d&#39;urgence permettant un accueil social, sanitaire et psychologique de jour et de nuit toute l&#39;année avec réquisition, dans cette situation, des logements vacants   &quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a74&quot;),
+	&quot;name&quot; : &quot;Marie-George Buffet&quot;,
+	&quot;content&quot; : &quot;Marie-George Buffet, Discours à Montreuil (20/03/07)  Au cours d&#39;un débat avec plus de 400 syndicalistes issus de cinq organisations syndicales différentes, 400 hommes et femmes travaillant dans tous les secteurs de la vie économique, j&#39;ai pu vérifier combien ces salariés et ces fonctionnaires étaient partagés par une même ambition : Devant les menaces qui pèsent sur l&#39;avenir de leur métier, face à la dégradation de leurs conditions de travail, tous et toutes ont la même volonté d&#39;être écoutés. Tous et toutes ont la même envie d&#39;être utiles à leurs collègues comme au développement de leur métier. Tous et toutes montrent le même attachement à leur travail et à la reconnaissance de son utilité sociale. Tous et toutes développent des propositions particulièrement riches pour leur entreprise. Mais aucun n&#39;est jamais véritablement entendu. Aucun n&#39;est entendu parce que trop souvent, le code du travail, les droits des salariés et de leurs représentants ne sont pas respecté. Aucun n&#39;est entendu parce que trop souvent, les choix de gestion de leurs entreprises ou de leurs services publics sont dominés par des logiques financières et comptables, à mille lieux des besoins économiques et sociaux de notre peuple. Aucun n&#39;est entendu, avec toutes les conséquences que l&#39;on connaît : le démantèlement de notre industrie et des services publics, la baisse du pouvoir d&#39;achat des salariés et de leurs familles, la désertification de régions entières touchées par des années de crise et de repli de l&#39;État. Cette situation doit cesser. Les actionnaires, les patrons, les serviteurs du grand capital ne peuvent continuer à décider seuls du sort de nos vies, de notre pays. La démocratie et la citoyenneté doivent rentrer dans l&#39;entreprise comme l&#39;entreprise doit être au coeur de la démocratie. Dans cet esprit, je suis évidemment favorable à ce que toute loi concernant la modification du code du travail soit précédée par une négociation. Mais les règles de la conclusion des accords doivent changer. La validité d&#39;un accord social ne doit reposer que sur la règle de l&#39;accord majoritaire en voix. La définition de la représentativité des organisations syndicales et patronales doit être désormais fondée sur le résultat d&#39;élections démocratiques. Je sais qu&#39;un débat existe quant au type d&#39;élection qui doit être pris en compte. Ma position n&#39;est pas fermée à ce propos. Ce qui importe est que le processus de mesure de la représentativité concerne tous les salariés, ceux des grandes entreprises comme ceux des PME, ceux du privé comme ceux de la fonction publique, qu&#39;il permette d&#39;établir une nouvelle situation de représentativité dans un délai raisonnablement court, qu&#39;il atteste de l&#39;implantation réelle des différentes organisations syndicales dans les entreprises et dans les branches. Sur ces bases, nous examinons de manière ouverte les différentes propositions en présence et souhaitons que les organisations syndicales puissent elles-mêmes aboutir à une proposition rassembleuse. À partir de cette démocratisation des relations sociales, je crois en la nécessité d&#39;aller bien plus loin dans le rôle devant être reconnu aux organisations syndicales. Les syndicats, et à travers eux les salariés, doivent disposer du pouvoir d&#39;intervenir dans la définition des stratégies des entreprises. Ils doivent se voir reconnus un droit suspensif sur les licenciements collectifs avec la possibilité de présenter des propositions alternatives qui feront l&#39;objet d&#39;un processus de débat approfondi avec les directions d&#39;entreprise mais aussi les territoires et l&#39;État, les élus et les populations. Ils doivent être en mesure d&#39;opposer aux stratégies financières de leurs directions des choix de développement durable de l&#39;activité, de l&#39;emploi, des salaires et de la recherche. La reconnaissance de ces nouveaux pouvoirs constituerait un immense progrès démocratique. Mais elle aiderait aussi à fonder notre développement économique sur d&#39;autres bases que celle des profits, de la rentabilité financière et du mépris des salariés. C&#39;est tout l&#39;enjeu de cette campagne : continuer la fuite en avant dans le libéralisme et la destruction de notre économie, ou bien se donner les moyens nécessaires pour éradiquer le chômage et répondre enfin aux besoins humains.&#39;   &quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940acb&quot;),
+	&quot;name&quot; : &quot;Ségolène Royal&quot;,
+	&quot;content&quot; : &quot;Ségolène Royal, Discours au soir du premier tour (à Melle) (22/04/07)  Français, Françaises mes chers compatriotes à vous qui m&#39;avez apporté si nombreux vos suffrages, aujourd&#39;hui, je vous exprime ma joie et ma profonde gratitude.  Un élan civique s&#39;est levé, la très forte participation, que j&#39;avais appelé de mes voeux, est là. Je mesure la responsabilité éminente et qui m&#39;honore, que vous me confiez ce soir.  Je n&#39;en tire aucune gloire personnelle, vous me donnez une responsabilité majeure, celle de porter le combat du changement pour que la France se relève.  Pour que la France se relève quelle retrouve son optimisme et qu&#39;elle fasse le choix de l&#39;audace et de la sérénité une nouvelle campagne s&#39;ouvre. Dans 15 jours, la France va choisir son destin et son visage.  Je lance un appel a toutes celles et ceux qui veulent que la France fasse triompher la République du respect parce que nous savons qu&#39;il n&#39;y a pas de liberté sans justice, qu&#39;il n&#39;y a pas d&#39;efficacité économique sans progrès social. Nous aurons le 6 mai prochain un choix clair entre 2 voix très différentes.  Et je tends la main a toutes celle et ceux qui pensent comme moi qu&#39;il est non seulement possible mais urgent de quitter un système qui ne marche plus.  Mes chers compatriotes je vous invite à inventer une France neuve a la fois protectrice et dynamique, une France a la fois fraternelle et conquérante et qui permet à chacun de construire et de réussir sa vie.  J&#39;appelle ce soir au rassemblement de toutes celles et ceux qui se reconnaissent dans les valeurs du pacte présidentiel, et qui pensent que l&#39;on peut réformer la France sans la brutaliser, qui veulent faire triompher toujours les valeurs humaines sur les valeurs boursières, qui veulent mettre fin aux insécurités et aux précarités qui se sont douloureusement creusées au cours de ces dernières années, qui veulent faire reculer toutes les formes de violence grâce a un ordre juste et à de nouvelles sécurités durables.  Je continue a faire le pari de l&#39;intelligence des français et je refuse de cultiver les peurs. il s&#39;agit de mettre la priorité sur l&#39;éducation, de consolider les familles, d&#39;épauler les plus fragiles et notamment nos anciens et les personnes en situation de handicap dont les conditions de vie se sont gravement détériorées au cours de ces cinq dernières années.  J&#39;entends instaurer des règles justes dans la mondialisation, maintenir en France nos centres de décision et notre tissu industriel, refuser la régression sociale qu&#39;entrainerait l&#39;abandon à un libéralisme effréné.  Nous ferons de l&#39;emploi tous ensemble notre combat principal et nous le gagnerons avec des entreprises performantes et conquérantes, qui respectent les salariés grâce à une démocratie sociale rénovée.  Je comprends la déception de toutes celles et ceux dont le ou la candidate n&#39;est pas au second tour. Mais je voudrais leur dire ceci : Je serai la présidente garante d&#39;un État impartial  Car vous le savez, je suis une femme libre comme vous êtes un peuple libre  Je ne suis l&#39;otage d&#39;aucun clan, d&#39;aucun groupe de pression, d&#39;aucune puissance financière.  Nous sommes nombreux et nombreuses aujourd&#39;hui, au delà de notre vote du premier tour, a ne pas vouloir d&#39;une France dominée par la loi du plus fort ou du plus brutal, et verrouillée par les puissances de l&#39;argent ou tous les pouvoirs sont concentrés entre peu de mains, toujours les mêmes.  Avec moi je vous propose de choisir une démocratie ou l&#39;on respire librement avec un parlement qui délibère et contrôle, un gouvernement qui a des résultats et qui rend des comptes un État sans gaspillage une justice indépendante des médias pluralistes et des libertés publiques garanties.  Oui, je veux une république refondée et non garrotée un état exerçant une autorité juste et ferme des régions dynamiques des services publics modernisés et performants avec des citoyens libres, éduqués par notre école, conscients de leurs droits comme de leurs devoirs.  Si vous me confiez la charge de présidente de la république, j&#39;aurais à coeur de défendre les intérêts de la France en Europe et dans le monde  Le patriotisme républicain trouvera tout son sens dans la construction d&#39;une Europe socialement et économiquement redressée et capable de peser, dans un mode multipolaire.  Les Français seront appelés à se prononcer par référendum sur le nouveau traité européen, celui ci ne se fera pas à leur insu.  Cette Europe sera au service de la paix, elle oeuvrera au dialogue des cultures au co-développement avec les pays du sud et à la préservation des équilibres de la vie sur la planète  Avec vous, je vais rendre à la France la fierté de son histoire qui renoue avec ses valeurs universelles car quand la France rencontre une grande idée, elles font ensemble le tour du monde.  Je veux une France qui renoue avec l&#39;idéal de la République des lumières les droits de l&#39;homme et de la femme et de la citoyenneté qui ont faire sa force et sa beauté. Venez hommes et femmes de France de tous âges, de tous milieux, de tous territoires et de toutes origines, venez ; forces vives de notre belle nation, venez, serrons-nous les coudes, ensemble nous allons rendre le sourire à notre pays. ensemble nous allons conjurer les mauvais démons de la déprime et du déclin.  Chers compatriotes rassemblons nous ce sont nos idées notre idéal qui vont gagner car elles sont au service de la France et des Français, de la paix civile et de l&#39;harmonie sociale.  J&#39;appelle toutes les énergies et l&#39;espérance a se mettre en mouvement pour une France victorieuse, une France présidente, fière d&#39;elle même pour que les Français s&#39;aiment en elle.  Notre victoire est possible car l&#39;audace et la générosité sont la c&#39;est une question de volonté et de cohérence, je les ai. J&#39;ai besoin de vous parce que la France a besoin de vous  Vive la république vive la France.   &quot;
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a3b&quot;),
+	&quot;name&quot; : &quot;François Bayrou&quot;,
+	&quot;content&quot; : &quot;François Bayrou, Discours devant le Comité national olympique et sportif français (15/02/07)  Mesdames et Messieurs,   Je suis très heureux d&#39;être là et de vous rencontrer. Vous qui êtes au fond ici les représentants des quinze millions de salariés, des trente millions de pratiquants, des deux millions de bénévoles, des 175.000 associations sportives, et d&#39;un secteur qui, même économiquement, joue un rôle important, puisque, comme vous le savez mieux que moi, on considère que les recettes apportées par le sport sont une part très importante du produit intérieur brut de la Nation. Vous avez le sentiment, et sans doute avez-vous raison, c&#39;est un sentiment que l&#39;on partagera, que le sport n&#39;a pas tout à fait la reconnaissance qu&#39;il mérite dans le paysage français. Je veux dire dans le paysage institutionnel, dans le paysage de la société française. Parce que dans la vie des familles, dans les conversations, dans le centre de préoccupations, au nombre d&#39;heures que les Français consacrent au sport, là, au contraire, le sport est un des événements les plus importants, en tous cas l&#39;un des secteurs les plus importants, un des centres d&#39;intérêt les plus importants de la Nation.  Je voudrai aborder très rapidement les questions que vous avez posées. D&#39;abord dire un mot de la gouvernance. Vous avez des inquiétudes sur le ministère des Sports. Je pense que c&#39;est important d&#39;avoir au sein du gouvernement une autorité gouvernementale qui soit chargée du sport. Je pense qu&#39;il est important que cette autorité gouvernementale soit reconnue, autonome, et surtout qu&#39;elle rencontre en face d&#39;elle un mouvement sportif organisé. Je veux insister sur ce point parce que, pour moi - j&#39;ai déjà eu l&#39;occasion de le dire devant d&#39;autres associations récemment - pour moi, le temps où l&#39;on regardait le gouvernement, l&#39;État comme seuls face à la société, aux citoyens sans organisation, est révolu. J&#39;ai la certitude depuis longtemps qu&#39;il faut désormais que l&#39;État trouve des partenaires dans la société civile. Il est indispensable que l&#39;État rencontre en face de lui une société civile organisée. Que cette société civile soit capable, au fond, c&#39;est ce que vous avez souhaité, Monsieur le Président, de promouvoir elle-même sa propre gouvernance. Que cette société civile soit reconnue dans sa capacité d&#39;organisation et dans la force qui est la sienne lorsque cette organisation est assumée à partir de la base. Pour moi, cette reconnaissance des corps intermédiaires - comme l&#39;on dit - face à l&#39;État, dans l&#39;organisation de la société française, c&#39;est-à-dire étant capable d&#39;assumer avec l&#39;État une négociation. Je ne crois pas me tromper en disant que, pour l&#39;instant, ce dialogue, même s&#39;il est chaleureux et amical, est insuffisant. Il faut qu&#39;il devienne institutionnalisé. Il faut que, chaque fois que l&#39;État prépare une décision, qu&#39;il nourrit une réflexion, qu&#39;il regarde à long terme une orientation, cette orientation, cette décision, soit soumise à la réflexion partagée avec des partenaires de l&#39;État. Que l&#39;État cesse de se considérer comme une place-forte. Qu&#39;il cesse de se considérer comme le seul porteur de la légitimité. C&#39;est d&#39;autant plus vrai dans un domaine, le vôtre, où évidemment l&#39;organisation à partir de la base est naturelle. Où le nombre incroyable d&#39;associations, le nombre impressionnant de bénévoles donne à ce corps social un enracinement, une légitimité que beaucoup d&#39;autres n&#39;ont pas. Donc je soutiens l&#39;idée d&#39;une organisation d&#39;une gouvernance autonome, forte, reconnue, respectée, du monde du sport face à l&#39;État. C&#39;était la première réflexion que je voulais faire.   La deuxième réflexion que je voulais faire, c&#39;était l&#39;importance du sport dans une société comme la nôtre. La reconnaissance du sport comme un fait de société qui mérite d&#39;être soutenu et aidé. Premièrement, parce que chacun le sait ici, le sport joue un rôle irremplaçable, un rôle clef lorsqu&#39;il s&#39;agit d&#39;ajouter, de ramener ou de rapporter le lien social dans un monde où hélas ! ce lien social est en train de céder, dans les quartiers, dans les cours d&#39;école, aux endroits les plus fragiles de la société française. Précisément là où l&#39;État est absent. Et plus particulièrement les associations sportives sont la main qui se tend et le moyen de retisser le lien spécialement à l&#39;intention ou à l&#39;endroit des jeunes. Ceci est une chose très importante. On l&#39;a encore vérifié au moment des émeutes de 2005, au moment de cette espèce d&#39;explosion larvée qu&#39;on a connue dans la société française. Chacun sait ici combien les clubs organisés ou moins organisés de basket par exemple, jouent un rôle important dans la manière dont on peut atteindre des jeunes qu&#39;autrement on n&#39;atteindrait, on ne toucherait jamais. Premier rôle, ce n&#39;était pas exclusif, c&#39;était simplement pour adresser un petit signe à ceux qui sont au premier rang et que j&#39;admire depuis longtemps. Et donc le sport comme ce qui permet de retisser du lien a cette importance. Et puis, il y a une importance du sport qui est sans doute sous-estimée aujourd&#39;hui, c&#39;est le sport qui permet des actions de prévention en matière de santé. Tout le monde s&#39;est rendu compte ces temps-ci, a mesuré ces temps-ci, quelles étaient les nasses qui, sur la société française, pesaient après qu&#39;elles ont pesé longtemps sur la société américaine, que la sédentarisation, le fait que l&#39;activité disparaissait, tout cela en effet, posait désormais des problèmes de santé publique. Je pense en particulier évidemment à l&#39;obésité. Mais ce n&#39;est pas la seul raison. Il y a aussi la prévention des maladies cardio-vasculaires, enfin tout ce qui est du domaine de la santé d&#39;une personne active, meilleure que celle d&#39;une personne en inactivité. Particulièrement, un jeune actif est en meilleure santé qu&#39;une jeune inactif pour le présent et pour le futur. Tout ce qui touche donc à la pratique raisonnée - on dit souvent une heure par jour d&#39;une activité physique en lien avec une alimentation équilibrée - joue un rôle très important pour l&#39;équilibre de la société dans laquelle nous vivons. Voilà au moins deux éléments et il y en a évidemment d&#39;autres. Dans tout ce qui touche à la reconnaissance des règles, tout cela donne au sport un rôle-clef dans l&#39;évolution de la société française. Ce rôle-clef doit être reconnu. C&#39;est pourquoi je trouve que votre reconnaissance d&#39;utilité sociale est une bonne proposition, et qui a le mérite d&#39;être soutenue. J&#39;ai lu votre discours au moment des voeux, Monsieur le Président, et naturellement, il faudra donner à cette reconnaissance un contenu précis. Mais on voit bien le mouvement.   C&#39;est d&#39;ailleurs un mouvement qui est du même ordre que ce que je soutenais à l&#39;instant lorsqu&#39;il s&#39;agissait de dire que, désormais, en France, l&#39;État doit trouver en face de lui une société organisée. De la même manière que l&#39;État doit trouver en face de lui une société civile organisée, il est bon que l&#39;État pense, sur un certain nombre des missions d&#39;utilité sociale ou d&#39;utilité civique qu&#39;il croyait jusqu&#39;à maintenant être le seul à remplir, à les déléguer, à les transmettre, à les confier à des structures plus autonomes comme par exemple celles du monde associatif. Reconnaissance d&#39;utilité sociale et reconnaissance au travers de cela du sport comme un fait de société très important. Reconnaissant ainsi les bienfaits physiques et sociaux qu&#39;il apporte.   Puisque j&#39;en suis à ce rôle du sport dans la société, je voudrai dire un mot du handisport. Du sport en direction des handicapés. J&#39;ai souvent parlé de ce sujet avec Béatrice Hess. Il y a dans l&#39;engagement sportif des handicapés un moyen, probablement le plus efficace, probablement le plus heureux de faire que chacun, lorsqu&#39;il est atteint par un handicap, puisse mesurer que sa place dans la société, sa légitimité, sa reconnaissance dans la société n&#39;a pas changé, au contraire. Et donc l&#39;idée que chaque fédération doit être incitée à s&#39;ouvrir sur le handicap dans le sport pour tous, c&#39;est quelque chose qui me paraît tout à fait essentiel et qui donne lieu à de remarquables parcours de vie personnels et de réussite personnelle.   Je voudrai dire un mot du sport de haut niveau. Naturellement, vous êtes tous bien plus compétents que moi sur ce sujet, il y a ici des visages célèbres. Chacun d&#39;entre vous a réfléchi évidemment à cette affaire. Moi, je suis frappé par le problème de la reconversion. Ces reconversions-là, certaines sont tout à fait éminentes, tout à fait illustres. Elles comportent pour un grand nombre d&#39;entre elles ou en tout cas pour certains d&#39;entre elles des destins ministériels. J&#39;espère qu&#39;il y a beaucoup de futurs ministres des sports dans cette salle. Mais il y a bien des jeunes qui ne deviendront pas ministre des sports. Il y a bien des jeunes qui connaissent de l&#39;intérieur cette aventure que beaucoup d&#39;entre vous avez vécue heureusement. Vous êtes un jeune de vingt ans, votre carrière dure en moyenne six ans, six ans et demi. Vous venez la plupart du temps de milieux modestes et c&#39;est heureux. Et puis vous connaissez la première ivresse de la notoriété et ça n&#39;est pas facile à gérer. Et puis vous connaissez une deuxième ivresse, quand vous réussissez très bien, celle de l&#39;argent. L&#39;argent qui vient de manière très importante et qui est un argent facile. Vous allez avoir beaucoup d&#39;argent entre les mains. Et un jour, il faut savoir que tout cela s&#39;arrête et que c&#39;est très difficile à vivre parce que vous avez à la fois la déprime de celui qui a été célèbre et qui découvre, tout d&#39;un coup, qu&#39;il ne l&#39;est plus et qu&#39;il n&#39;est qu&#39;un visage anonyme alors qu&#39;il était un visage glorifié. Et le changement de conditions de vie matérielle. C&#39;est pourquoi je suis favorable à l&#39;idée d&#39;un plan d&#39;épargne-reconversion. Que des conditions fiscales très avantageuses soient faites à ceux qui choisiront de préparer leur avenir au travers de ce plan d&#39;épargne-reconversion. Que l&#39;on ait ainsi le moyen et la faculté de les aider à préparer leur avenir et de faire qu&#39;ils ne soient pas démunis et dépourvus le jour où tout cela, cet épisode de gloire et de succès, s&#39;arrêtera. Je voulais dire qu&#39;il y a des exemples de cet ordre. La situation faite à un certain nombre de catégories en France, notamment l&#39;on dit que c&#39;est le statut des danseurs de l&#39;Opéra qui permet de trouver un chemin vers ce plan d&#39;épargne-reconversion. Il faut donc que les sportifs de haut niveau se voient offrir un accès à ces avantages fiscaux.   Il y a une réflexion à conduire à l&#39;intention des clubs-formateurs. Je n&#39;ai pas exactement la clef de cela, mais, depuis l&#39;arrêt Bosman et depuis la reconnaissance de la libre circulation, tout le monde voit bien qu&#39;il y a d&#39;une certaine manière un hiatus entre les clubs-formateurs et la carrière de ceux qu&#39;ils ont formés. Il me semble qu&#39;il faudrait réfléchir dans le cadre européen à la manière dont un jeune homme, une jeune femme qui a été formée dans un club, qui a demandé un grand investissement pour ce club-là, devraient conserver un lien, un coup de main avec le club qui l&#39;a formé. Il y a souvent des frustrations. On lit ici ou là que de très grands clubs sportifs veulent désormais se débarrasser de leur mission de formation, qu&#39;ils ont l&#39;impression que ce sont beaucoup d&#39;efforts pour des résultats trop faibles à leurs yeux. Je pense qu&#39;ils se trompent et qu&#39;il y aurait grand intérêt à pousser le monde, l&#39;univers de ces clubs de très haut niveau, au contraire, à conserver, améliorer, investir dans le centre de formation dont ils ont la charge.   Dans la troisième partie, je voudrai traiter, cela ne vous étonnera pas, du sport dans le domaine éducatif. De ce que le sport doit apporter à l&#39;éducation et particulièrement à l&#39;Éducation nationale. Chacun d&#39;entre nous sait probablement que, le sport est, en France, un des manques les plus grands dans l&#39;Éducation nationale. Ce manque s&#39;explique. Il s&#39;explique par un certain nombre d&#39;impératifs matériels. Vous vous souviendrez que nous avions même discuté de cela ensemble lorsque j&#39;étais ministre de l&#39;Éducation nationale. J&#39;ai poussé un certain nombre d&#39;expériences, comme à Epinal, de type anglo-saxon ou de type allemand qui consistait à imaginer, proposer que dans une journée scolaire, une partie de la journée, l&#39;après-midi par exemple ou une partie de l&#39;après-midi, soit réservée à des activités sportives ou artistiques. Et vous savez pourquoi ce type d&#39;expériences ne s&#39;est pas perpétué : c&#39;est parce que cela coûte extrêmement cher. D&#39;abord pour la première raison qu&#39;il faut doubler la surface des classes et la surface des stades. Parce que, si vous avez évidemment, huit heures de cours dans la journée et si vous n&#39;en avez plus que cinq, il faut augmenter la surface des équipements. Puis cela pose évidemment des problèmes d&#39;organisation à l&#39;intérieur des établissements. Cependant, je n&#39;ai jamais perdu de vue l&#39;idée que le sport était éducatif, que la pratique du sport était éducative. C&#39;est pourquoi j&#39;ai vu avec sympathie les enseignants qui étaient à la porte et qui considèrent que l&#39;action que l&#39;on conduit et qui vise à les priver d&#39;un certain nombre d&#39;heures d&#39;encadrement des activités sportives dans les lycées, c&#39;est probablement des économies mais je considère que ce sont des économies mal placées. Je ne pense pas que c&#39;est là qu&#39;on va trouver une meilleure gestion du système éducatif, et qu&#39;au contraire, on devrait garantir ce type de moyens, et ouvrir la discussion avec les enseignants pour savoir comment on peut améliorer la présence du sport dans les établissements. Comment on peut renforcer les passerelles entre le monde scolaire et le monde associatif. Comment on doit améliorer la formation des STAPS. Comment on doit insérer le sport dans le socle des connaissances. Comment on doit permettre la création de sections sportives dans les établissements. Comment on peut améliorer sans que cela coûte trop cher le nombre d&#39;heures d&#39;activité sportive pour les enfants. Et je relierai toutes ces exigences à la proposition que j&#39;ai faite depuis longtemps d&#39;offrir ou de garantir à chaque jeune un service civique universel dans lequel il pourra valoriser des aptitudes qui seront les siennes au service de la société à laquelle il appartient et avec laquelle il va vivre. Je pense que si l&#39;on se met dans cet état d&#39;esprit d&#39;un service civique universel et dans l&#39;esprit de l&#39;autre proposition que je fais qui est l&#39;activité universelle pour tous ceux qui sont hélas ! sur le bord de la route, souvent relevant des minimas sociaux et de rien d&#39;autre et qu&#39;on leur propose à la fois d&#39;améliorer leur fin de mois et leur inscription dans la société en trouvant une activité au service des autres dans le monde associatif ou dans le monde des collectivités locales, alors on voit que tout d&#39;un coup, vous avez 300.000 jeunes disponibles ou capables d&#39;assumer un certain nombre d&#39;activités d&#39;encadrement, d&#39;animation. Et vous avez peut-être 500.000 autres personnes qui sont capables aussi d&#39;apporter leur pierre à l&#39;édifice. Vous vous trouvez avec une capacité d&#39;améliorer fortement, sans que ce soit une charge impossible à supporter, l&#39;encadrement, l&#39;animation, la faculté d&#39;entraîner en particulier ces jeunes. Et je crois que le domaine du sport peut en bénéficier beaucoup.   Vous me permettrez, puisque j&#39;en suis au sport comme vecteur éducatif, de dire un mot qui ne me regarde pas à propos d&#39;un sujet que vous connaissez et que je ne connais pas bien, mais qui trouble beaucoup la société française. C&#39;est celui du dopage dans le sport. Cela ne me regarde pas, parce qu&#39;il y a des instances pour cela mais après tout, comme citoyens, nous avons une réflexion à conduire sur ce sujet. J&#39;approuve évidemment tout ce qui est de l&#39;ordre du contrôle et de la répression mais je voudrai simplement, en une phrase, dire qu&#39;il y a quelque hypocrisie à tout mettre du côté du contrôle et pas grand-chose du côté de la prévention. Et notamment, dans un certain nombre d&#39;épreuves sportives, à relever constamment le niveau de difficultés de ces épreuves et de s&#39;étonner ensuite que les athlètes, pour atteindre ces niveaux de difficulté, d&#39;épuisement physique, de succession d&#39;épreuves, aient recours à des procédés regrettables. Il y a là, me semble-t-il, un cohérence qu&#39;on devrait chercher et qu&#39;il serait bon de trouver.   Je voudrai dire un mot, si vous le permettez, du financement. Alors il y a au premier rang François Rochebloine, le député de la Loire, qui m&#39;envoie des messages subliminaux. Ses yeux brillent parce qu&#39;il m&#39;a écrit l&#39;engagement que je devais prendre devant vous sur l&#39;augmentation garantie sur cinq ans du budget du sport. Il m&#39;a appelé trois fois dans la voiture en venant pour bien s&#39;assurer que j&#39;allais le dire. Je vais lui faire de la peine et je vais vous faire de la peine : je ne prendrai pas des engagements de cet ordre. J&#39;ai décidé, en tout cas pour ma part, que dans une campagne électorale où il y a un déluge de promesses dont je vous dis à l&#39;avance qu&#39;elles ne seront pas respectées, il est irresponsable de visiter l&#39;une après l&#39;autre chacune des catégories sociales en signant des chèques dont tout le monde sait que ce sont des chèques en bois. Je pense qu&#39;il est juste de réfléchir à l&#39;amélioration du financement du sport. Je pense en particulier que c&#39;est un devoir, et un devoir que je me fixe, de mener au niveau europée la bataille pour éviter la libéralisation du monde des jeux et des paris qui priverait le monde sportif d&#39;une partie de son financement. Je pense qu&#39;il y a là une digue de résistance à construire. Cela concerne beaucoup de secteurs dans la société française. Je pense qu&#39;il est nécessaire d&#39;être solidaire du monde du sport, de regarder comment on peut, à partir des jeux et des paris, améliorer le financement du sport. Mais, quant à moi, je me refuse à prendre des engagements dont je sais très bien qu&#39;ils ne seront pas respectés. Et je préfère dire que nous ferons ce que nous pourrons. En liaison avec vous. En discutant avec vous. Mais pas en faisant des promesses qui ne peuvent être que fallacieuses et donc inciviques. Alors je sais que l&#39;on vous a promis un pour cent, deux pour cent, trois pour cent du budget, vous avez raison parce que là, on doublerait le déficit de la France. Tout de même, cela ne le mérite pas. Vous ne me compterez pas dans cette liste. Je me fais une originalité et un devoir de ne pas succomber à ce genre de surenchères qui ne pourront évidemment amener que des déceptions.   Je voudrai finir en abordant dans mon dernier chapitre la dernière idée qui sera celle de la reconnaissance du bénévolat. Ce n&#39;est pas uniquement dans le domaine du sport qu&#39;il faut reconnaître le bénévolat et j&#39;ai eu récemment l&#39;occasion de le dire. Il me semble qu&#39;il y a trois directions raisonnables. La première direction raisonnable, c&#39;est d&#39;améliorer les conditions matérielles d&#39;exercice du bénévolat. Par exemple je pense à des dispositions de l&#39;ordre du remboursement des frais engagés qui, me semble-t-il, pourraient être allégés ou pourraient être facilités et qui permettront à des personnes d&#39;exercer un bénévolat sans porter trop atteinte à la situation matérielle qui est quelque fois difficile qui est la leur. En parlant de ces trois directions, j&#39;ai oublié de le dire, il y a une chose : je n&#39;ai pas évoqué le mot de statut du bénévole, parce que pour moi, statut et bénévolat sont deux choses contradictoires entre elles. Et il me semble qu&#39;au contraire, la valeur du bénévolat, la puissance du bénévolat, c&#39;est qu&#39;il s&#39;agit d&#39;une démarche de gratuité. Non marchande, non statutaire, une démarche d&#39;une femme, d&#39;un homme qui choisissent au contraire d&#39;offrir gratuitement ce qu&#39;elle a ou ce qu&#39;il a à ceux qui l&#39;entourent et très souvent particulièrement aux associations et aux jeunes. Deuxième piste après la facilitation des frais matériels, je pense que la prise en compte dans le domaine de la validation des acquis, de l&#39;expérience que l&#39;on a acquise, que l&#39;on a accumulée, notamment dans l&#39;animation d&#39;un groupe d&#39;hommes et de jeunes, doit être validée et présentable dans un curriculum-vitae. J&#39;ai été de ceux comme ministre de l&#39;Éducation, qui ont mis en place et rendu forte la validation des acquis. Je pense nécessaire de le continuer et de l&#39;étendre dans le sens des bénévoles qui ont une expérience dans les associations et particulièrement les associations sportives. Dernier point : vous savez que je défends l&#39;idée que nous allons avoir à assumer tous ensemble -citoyens- de manière sereine et calme, une grande réforme des retraites. Tout le monde sait que la réforme des retraites est devant nous comme une contrainte. Et tout le monde sait que ce sera, dans les prochaines années, un rendez-vous impossible à contourner pour la société française. Cette réforme des retraites, selon moi, doit déboucher sur une architecture nouvelle de la retraite qui permettra à chacun de prendre en compte les années de travail, la pénibilité des années de travail, pour avoir son compte de points comme on l&#39;a dans les assurances privées, dans les retraites complémentaires et pouvoir ainsi prendre librement la décision de l&#39;âge de son départ à la retraite. &#39;Si la pension me convient, je peux partir à la retraite à partir de soixante ans. Si la pension est trop faible, je peux allonger ma durée de travail.&#39; J&#39;ouvre une parenthèse, ou je mets une note en bas de page : à condition que les entreprises comprennent que quelqu&#39;un qui a plus de cinquante ans n&#39;est pas forcément à laisser sur le bord de la route. Notamment en raison du coût que représente son salaire plus les charges pour la société ou l&#39;employeur dont il est salarié. On a cette grande réforme des retraites devant nous. Et cette réforme des retraites permettra, devra permettre à chacun de se constituer un certain nombre de droits. Il me semble que, parmi, ces droits, l&#39;exercice d&#39;un bénévolat dans une association devrait donner lieu à un certain nombre d&#39;avantages-retraite lorsque le terme de sa vie professionnelle arrive. Il y a là une réflexion différente. La retraite ne serait plus seulement la prise en compte du travail salarié et des années qu&#39;on a consacrées au travail salarié, mais elle pourrait être aussi, d&#39;une certaine manière, et subsidiairement aussi, la prise en compte d&#39;un certain nombre de services rendus à la société. Et les bénévoles rendent des services éminents. Il ne s&#39;agira pas d&#39;avantages considérables. Il ne s&#39;agira pas de mille et de cent. Il s&#39;agira d&#39;une reconnaissance. Il s&#39;agira de marquer que la société a vu et récompense autrement que par les médailles auxquelles vous êtes habitués, prend en compte et reconnaît l&#39;engagement d&#39;une femme ou d&#39;un homme au service des autres dans la société que nous formons tous ensemble.   Voilà les chapitres que je voulais aborder pour répondre aux questions qui sont les vôtres. Reconnaissance du rôle du sport, des animateurs, des associations, des sportifs de haut niveau dans la société française. Facilitation ou effort pour faciliter leur engagement d&#39;abord, leur réinsertion lorsqu&#39;ils ont été sportifs de haut niveau. Effort en direction de la formation lorsqu&#39;il s&#39;agit de clubs. Effort en direction de l&#39;inscription du sport dans l&#39;Éducation nationale. Reconnaissance de son rôle éducatif. Et engagement par le service civique et l&#39;activité universelle, l&#39;engagement de la société pour aider le monde du sport à réaliser sa mission. Et puis, pour ce qui est des aspects financiers, je vous ai dit ce qui, à mes yeux paraissait civique. Mais la bonne volonté des gouvernants peut aussi entendre le moment venu la demande justifiée du Comité national olympique et sportif français.   Je vous remercie.   &quot;
 }
 </pre></div>
 </div>
@@ -1373,12 +1403,57 @@ Les résultats renvoyés par une requête utilisant ces deux index seront donc t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: error: {
-	&quot;ok&quot; : 0,
-	&quot;errmsg&quot; : &quot;text index required for $text query (no such collection &#39;food.discours&#39;)&quot;,
-	&quot;code&quot; : 27,
-	&quot;codeName&quot; : &quot;IndexNotFound&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a15&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.0213221953235276
 }
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940acf&quot;),
+	&quot;name&quot; : &quot;Ségolène Royal&quot;,
+	&quot;score&quot; : 1.0162709875951839
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a7f&quot;),
+	&quot;name&quot; : &quot;Nicolas Sarkozy&quot;,
+	&quot;score&quot; : 1.0149398220234647
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a17&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.0148458317453941
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a1f&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.0144641582782452
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a13&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.014069033340669
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a1c&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.012998790810042
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a71&quot;),
+	&quot;name&quot; : &quot;Marie-George Buffet&quot;,
+	&quot;score&quot; : 1.0125051370715994
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a1b&quot;),
+	&quot;name&quot; : &quot;Dominique Voynet&quot;,
+	&quot;score&quot; : 1.0117545871555031
+}
+{
+	&quot;_id&quot; : ObjectId(&quot;6083ed2334ce9c9615940a56&quot;),
+	&quot;name&quot; : &quot;Jean-Marie Le Pen&quot;,
+	&quot;score&quot; : 1.0082227226934934
+}
+Type &quot;it&quot; for more
 </pre></div>
 </div>
 </div>
@@ -1403,6 +1478,18 @@ En plus d’une meilleure efficacité, cet index va permettre de trouver des él
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">ref</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="o">:</span> <span class="p">[</span><span class="nx">longitude</span><span class="p">,</span> <span class="nx">latitude</span><span class="p">]}</span>
 <span class="nx">db</span><span class="p">.</span><span class="nx">nomDeLaCollection</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s2">&quot;clé&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">$near</span> <span class="o">:</span> <span class="p">{</span><span class="nx">$geometry</span> <span class="o">:</span> <span class="nx">ref</span><span class="p">}}})</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">use</span> <span class="nx">food</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>switched to db food
+</pre></div>
+</div>
+</div>
 </div>
 <p><em>Exemple 1 :</em></p>
 <div class="cell docutils container">
@@ -1499,9 +1586,8 @@ Pour avoir un polygone fermé, il faudra veiller à ce que les dernières coordo
 
       </div>
     </div>
-
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
 
     

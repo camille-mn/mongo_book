@@ -197,6 +197,10 @@ db.nomDeLaCollection.find({$text: {$search: "ma requête"}},{"score": {$meta: "t
 
 Cette requête renvoie une liste des documents ordonnée par pertinence, si vous souhaitez juste afficher le score de chaque document, il suffit d'enlever `.sort({score: {$meta: "textScore"}})`.
 
+```{code-cell}
+use elections2007
+```
+
 _Exemple 1 : Liste des documents comportant le terme "famille" mais pas le terme "politique"._
 
 ```{code-cell}
@@ -230,6 +234,10 @@ Le mot-clé `$near` est nécessaire:
 ```javascript
 var ref = {"type": "Point", "coordinates": [longitude, latitude]}
 db.nomDeLaCollection.find({"clé": {$near : {$geometry : ref}}})
+```
+
+```{code-cell}
+use food
 ```
 _Exemple 1 :_
 ```{code-cell}
